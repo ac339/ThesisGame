@@ -10,9 +10,11 @@ public class EnemyScript : MonoBehaviour {
     public int enemyShipBulletPower;
     private GameObject gamePlayerController;
     private PlayerController playerController;
+    public bool isDestroyed;
 
     // Use this for initialization
     void Start () {
+        isDestroyed = false;
         hasAppeared = false;
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         gamePlayerController = GameObject.FindWithTag("Player");
@@ -47,6 +49,7 @@ public class EnemyScript : MonoBehaviour {
 
         if (enemyShipHealth < 1)
         {
+            isDestroyed = true;
             Destroy(gameObject);
         }
 

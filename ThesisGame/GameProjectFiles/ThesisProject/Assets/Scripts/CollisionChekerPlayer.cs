@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class CollisionChekerPlayer : MonoBehaviour {
 
     public Slider healthBarSlider;  //reference for slider
+    public Slider bulletSpeedSlider;
+    public Slider bulletPowerSlider;
     public Text gameOverText;   //reference for text
     private bool isGameOver = false; //flag to see if game is over
                                      // private int health = healthBarSlider.value;
@@ -13,16 +15,15 @@ public class CollisionChekerPlayer : MonoBehaviour {
     public float healthPowerUp;
     public float enemyShipDamage;
     public float enemyProjectileDamage;
-    private CollisionCheckerSpeedPowerUp collisionCheckerSpeedPowerUp;
-    private GameObject gameCollisionCheckerSpeedPowerUp;
+    public int bulletSpeedPowerUp;
+    public int bulletPowerPowerUp;
     private GameObject gamePlayerController;
     private PlayerController playerController;
 
     void Start()
     {
+        //bulletSpeedPowerUp = 300;
         gameOverText.enabled = false; //disable GameOver text on start
-        gameCollisionCheckerSpeedPowerUp = GameObject.FindWithTag("PowerUpSpeed");
-        collisionCheckerSpeedPowerUp = gameCollisionCheckerSpeedPowerUp.GetComponent<CollisionCheckerSpeedPowerUp>();
         gamePlayerController = GameObject.FindWithTag("Player");
         playerController = gamePlayerController.GetComponent<PlayerController>();
     }
@@ -68,10 +69,14 @@ public class CollisionChekerPlayer : MonoBehaviour {
             healthBarSlider.value -= enemyProjectileDamage;
             Destroy(col.gameObject);
         }
-        else if (col.gameObject.tag == "PowerUpSpeed")
+        else if (col.gameObject.tag == "Speed")
         {
-            playerController.bulletSpeed = playerController.bulletSpeed + collisionCheckerSpeedPowerUp.speedPowerUp;
-            Debug.Log("Bullet Speed is:" + playerController.bulletSpeed);
+            bulletSpeedSlider.value += bulletSpeedPowerUp;
+            Destroy(col.gameObject);
+        }
+        else if (col.gameObject.tag == "Power")
+        {
+            bulletPowerSlider.value += bulletPowerPowerUp;
             Destroy(col.gameObject);
         }
         else

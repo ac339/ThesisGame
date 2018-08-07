@@ -18,16 +18,37 @@ public class CollisionCheckerHazard : MonoBehaviour
         hazardHealth = 10;
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
         gamePlayerController = GameObject.FindWithTag("Player");
-        playerController = gamePlayerController.GetComponent<PlayerController>();
+   //     playerController = gamePlayerController.GetComponent<PlayerController>();
         gameEnemyScript = GameObject.FindWithTag("EnemyShip");
-        enemyScript = gameEnemyScript.GetComponent<EnemyScript>();
+      //  enemyScript = gameEnemyScript.GetComponent<EnemyScript>();
         if (gameControllerObject != null)
         {
             gameController = gameControllerObject.GetComponent<GameController>();
         }
         if(gameController == null)
         {
-            Debug.Log(" Cannot find Game Controller script");
+           // Debug.Log(" Cannot find Game Controller script");
+        }
+
+
+        if (gamePlayerController != null)
+        {
+            playerController = gamePlayerController.GetComponent<PlayerController>();
+        }
+        if (gamePlayerController == null)
+        {
+           // Debug.Log(" Cannot find Game Controller script");
+        }
+
+
+
+        if (gameEnemyScript != null)
+        {
+            enemyScript = gameEnemyScript.GetComponent<EnemyScript>();
+        }
+        if (gameEnemyScript == null)
+        {
+         //   Debug.Log(" Cannot find Game Controller script");
         }
 
     }

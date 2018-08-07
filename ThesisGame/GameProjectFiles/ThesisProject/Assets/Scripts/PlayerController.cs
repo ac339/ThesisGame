@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Boundary
@@ -12,14 +13,18 @@ public class PlayerController : MonoBehaviour
     public GameObject bullet;
     public int bulletSpeed;
     public int bulletPower;
+    public Slider bulletSpeedSlider;
+    public Slider bulletPowerSlider;
 
     void Start()
     {
-        bulletPower = 1;
-        bulletSpeed = 300;
+        bulletPower =(int) bulletPowerSlider.value;
+        bulletSpeed =(int) bulletSpeedSlider.value;
     }
     void Update()
     {
+        bulletPower = (int) bulletPowerSlider.value;
+        bulletSpeed = (int) bulletSpeedSlider.value;
         if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
 
      {
@@ -61,6 +66,8 @@ public class PlayerController : MonoBehaviour
             b.GetComponent<Rigidbody2D>().AddForce(transform.up * bulletSpeed);
 
         }
+
+ 
 
     }
 

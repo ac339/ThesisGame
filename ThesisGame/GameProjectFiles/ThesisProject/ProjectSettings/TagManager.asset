@@ -10,7 +10,9 @@ TagManager:
   - PowerUp
   - EnemyShip
   - EnemyProjectile
-  - PowerUpSpeed
+  - Speed
+  - Power
+  - Wormhole
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - EnemyBullet
   - PowerUp
   - Hazard
-  - 
+  - Wormhole
   - 
   - 
   - 

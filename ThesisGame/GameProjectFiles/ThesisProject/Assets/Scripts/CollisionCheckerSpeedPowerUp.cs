@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CollisionCheckerSpeedPowerUp : MonoBehaviour
 {
-    public int speedPowerUp;
+ 
 
     void Start()
     {
-        speedPowerUp = 100;
+       
     }
 
     void OnCollisionEnter2D(Collision2D col)
