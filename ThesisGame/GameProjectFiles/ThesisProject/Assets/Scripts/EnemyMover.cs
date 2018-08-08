@@ -6,13 +6,30 @@ public class EnemyMover : MonoBehaviour {
     public float speed;
     public new Rigidbody2D rigidbody;
     public bool random;
+    float originalY;
+ 
+    public float floatStrength = 1;  
 
     void Start()
     {
-        if (random)
-            rigidbody.velocity = Random.value * transform.right * speed;
-        {
+        this.originalY = this.transform.position.y;
+        
+         if (random) {
+              rigidbody.velocity = Random.value * transform.right * speed;
+          }else
+          {
             rigidbody.velocity = transform.right * speed;
         }
+
+       
     }
+
+
+    void Update()
+    {
+        transform.position = new Vector3(transform.position.x,
+               originalY + ((float)System.Math.Sin(Time.time) * floatStrength),
+               transform.position.z);
+    }
+
 }

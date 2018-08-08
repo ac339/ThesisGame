@@ -59,7 +59,7 @@ public class EnemyScript : MonoBehaviour {
     {
 
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
-        if (col.gameObject.tag == "Projectile")
+        if (col.gameObject.tag == "Projectile" || col.gameObject.tag=="Laser")
         {
              
     Destroy(col.gameObject);

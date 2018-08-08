@@ -13,6 +13,8 @@ TagManager:
   - Speed
   - Power
   - Wormhole
+  - PowerUpHealthUp
+  - Laser
   layers:
   - Default
   - TransparentFX

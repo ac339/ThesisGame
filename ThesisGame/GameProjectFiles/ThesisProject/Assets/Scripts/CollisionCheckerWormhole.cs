@@ -3,7 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionCheckerWormhole : MonoBehaviour {
-
+    private GameController gameController;
+    public int scoreValue;
+    void Start()
+    {
+        GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+        if (gameControllerObject != null)
+        {
+            gameController = gameControllerObject.GetComponent<GameController>();
+        }
+        if (gameController == null)
+        {
+            // Debug.Log(" Cannot find Game Controller script");
+        }
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
@@ -46,5 +59,15 @@ public class CollisionCheckerWormhole : MonoBehaviour {
         {
             Destroy(col.gameObject);
         }
+        else if (col.gameObject.tag == "PowerUpHealthUp")
+        {
+            Destroy(col.gameObject);
+        }
+        else if (col.gameObject.tag == "Laser")
+        {
+            Destroy(gameObject);
+            gameController.AddScore(scoreValue);
+        }
+       
     }
 }

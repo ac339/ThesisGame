@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     public GameObject enemy;
     public GameObject powerUpSpeed;
     public GameObject powerUpBulletPower;
+    public GameObject powerUpHealthBar;
     public GameObject wormHole;
     //public GameObject powerUp;
     public Vector3 spawnValues;
@@ -35,6 +36,14 @@ public class GameController : MonoBehaviour
     public int numberOfEnemies;
     public float enemyWaveWait;
     private int deadcounter;
+
+    //enemy movement
+    public int radius;
+    private Transform enemyWaypoint1;
+
+
+
+
     void Start()
     {
         score = 0;
@@ -129,9 +138,10 @@ public class GameController : MonoBehaviour
             {
                 Vector3 spawnPosition = new Vector3(spawnValues.x, UnityEngine.Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
-               
+                float scale = UnityEngine.Random.Range((float)0.1, (float)0.6);
+                hazard.transform.localScale += new Vector3(scale, scale, 0);
                 Instantiate(hazard, spawnPosition, spawnRotation);
-              //  Physics2D.IgnoreCollision(this.hazard.GetComponent<CapsuleCollider2D>(), enemy.GetComponent<CapsuleCollider2D>(), true);
+                hazard.transform.localScale = new Vector3((float)0.2, (float)0.2, 0);
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
@@ -149,7 +159,6 @@ public class GameController : MonoBehaviour
                 Quaternion spawnRotationPU = Quaternion.identity;
                 int prefabIndex = UnityEngine.Random.Range(0, prefablist.Count - 1);
                 Instantiate(prefablist[prefabIndex], spawnPositionPowerUp, spawnRotationPU);
-                // Physics2D.IgnoreCollision(this.powerUp.GetComponent<CapsuleCollider2D>(), enemy.GetComponent<CapsuleCollider2D>(), true);
                 yield return new WaitForSeconds(powerUpSpawnWait);
             }
             yield return new WaitForSeconds(powerUpWaveWait);
@@ -169,9 +178,13 @@ public class GameController : MonoBehaviour
             for (int l = 0; l < numberOfEnemies; l++)
             {
               
-                Instantiate(enemy, new Vector3(5, 2, -4), enemy.transform.rotation);
-                Instantiate(enemy, new Vector3(5, 0, -4), enemy.transform.rotation);
-                Instantiate(enemy, new Vector3(5, -2, -4), enemy.transform.rotation);
+                GameObject enemya=(GameObject)Instantiate(enemy, new Vector3(5, 2, -4), enemy.transform.rotation);
+                GameObject enemyb= (GameObject)Instantiate(enemy, new Vector3(5, 0, -4), enemy.transform.rotation);
+                GameObject enemyc = (GameObject)Instantiate(enemy, new Vector3(5, -2, -4), enemy.transform.rotation);
+                //movement
+              //  enemyWaypoint1.position = new Vector3(enemya.transform.position.x, enemya.transform.position.y + radius, enemya.transform.position.z);
+             //   enemya.transform.position = Vector3.MoveTowards(enemya.transform.position, enemyWaypoint1.position, 5);
+
                 // Physics2D.IgnoreCollision(this.powerUp.GetComponent<CapsuleCollider2D>(), enemy.GetComponent<CapsuleCollider2D>(), true);
                 yield return new WaitForSeconds(enemyWaveWait);
             }
@@ -226,8 +239,7 @@ public class GameController : MonoBehaviour
 
 
 
-
-            void UpdateScore()
+    void UpdateScore()
     {
         scoreText.text = "Score : " + score;
     }

@@ -13,19 +13,26 @@ public class CollisionChekerPlayer : MonoBehaviour {
                                      // private int health = healthBarSlider.value;
     public float hazardDamage;
     public float healthPowerUp;
+    public float healthPowerUpHealthBar;
     public float enemyShipDamage;
     public float enemyProjectileDamage;
     public int bulletSpeedPowerUp;
     public int bulletPowerPowerUp;
     private GameObject gamePlayerController;
     private PlayerController playerController;
-
+    private RectTransform HPSliderRect;
+    public Text HPText;
+    private int hp;
     void Start()
     {
         //bulletSpeedPowerUp = 300;
+        hp = (int)healthBarSlider.value;
+        UpdateHP();
         gameOverText.enabled = false; //disable GameOver text on start
         gamePlayerController = GameObject.FindWithTag("Player");
         playerController = gamePlayerController.GetComponent<PlayerController>();
+        HPSliderRect = healthBarSlider.GetComponent<RectTransform>();
+        
     }
 
     // Update is called once per frame
@@ -34,7 +41,17 @@ public class CollisionChekerPlayer : MonoBehaviour {
         //check if game is over i.e., health is greater than 0
         if (!isGameOver)
             transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * 10f, 0, 0); //get input
+
+        UpdateHP();
     }
+
+
+    void UpdateHP()
+    {
+        hp = (int)healthBarSlider.value;
+        HPText.text = "HP : " + hp +"/" + healthBarSlider.maxValue;
+    }
+   
 
     //Check if player enters/stays on the fire
     void OnCollisionEnter2D(Collision2D col)
@@ -45,11 +62,11 @@ public class CollisionChekerPlayer : MonoBehaviour {
             healthBarSlider.value -= hazardDamage;  //reduce health
            // Destroy(col.gameObject);
         }
-        else if(col.gameObject.tag == "PowerUp" && healthBarSlider.value <= 1)
+        else if(col.gameObject.tag == "PowerUp" && healthBarSlider.value <= healthBarSlider.maxValue)
         {
-            if (healthBarSlider.value == 1)
+            if (healthBarSlider.value == healthBarSlider.maxValue)
             {
-                healthBarSlider.value = healthBarSlider.value;
+                healthBarSlider.value = healthBarSlider.maxValue;
             }
             else
             {
@@ -77,6 +94,14 @@ public class CollisionChekerPlayer : MonoBehaviour {
         else if (col.gameObject.tag == "Power")
         {
             bulletPowerSlider.value += bulletPowerPowerUp;
+            Destroy(col.gameObject);
+        }
+        else if (col.gameObject.tag == "PowerUpHealthUp")
+        {
+            healthBarSlider.maxValue += healthPowerUpHealthBar;
+            HPSliderRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthBarSlider.maxValue+ healthPowerUpHealthBar);
+            healthBarSlider.transform.position = new Vector3(healthBarSlider.transform.position.x, healthBarSlider.transform.position.y);
+            healthBarSlider.value += healthPowerUpHealthBar;
             Destroy(col.gameObject);
         }
         else
