@@ -3,10 +3,14 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-  
+
     public List<GameObject> prefablist;
     private List<GameObject> enemiesList;
     private bool allEnemiesDead;
@@ -44,8 +48,27 @@ public class GameController : MonoBehaviour
 
 
 
+
+    // Gameover conditions
+    public bool isGameOver = false; //flag to see if game is over
+    public Slider healthBarSlider;
+    //Seed Tracking components
+    private GameObject gameGameController;
+    private GameController gameController;
+    private static GameObject gameEnemyMover;
+    private EnemyMover enemyMover;
+    private GameObject gameEnemyScript;
+    private EnemyScript enemyScript;
+    private GameObject gameCollisionChekerPlayer;
+    private CollisionChekerPlayer collisionChekerPlayer;
+    private GameObject gamePlayerController;
+    private PlayerController playerController;
+    
+
+
     void Start()
     {
+
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
@@ -54,12 +77,114 @@ public class GameController : MonoBehaviour
         StartCoroutine(SpawnWormholes());
         allEnemiesDead = false;
         deadcounter = 0;
-
+      
+        if (PlayerPrefs.GetInt("hasEnteredSeed")==1)
+        {
+            /*StartCoroutine(Delay());
+            gameGameController = GameObject.FindWithTag("GameController");
+            gameController = gameGameController.GetComponent<GameController>();
+            //Seed Tracking components
+            gameGameController = GameObject.FindWithTag("GameController");
+            gameController = gameGameController.GetComponent<GameController>();
+            gameEnemyMover = GameObject.FindWithTag("EnemyShip");
+            enemyMover = gameEnemyMover.GetComponent<EnemyMover>();
+            gameEnemyScript = GameObject.FindWithTag("EnemyShip");
+            enemyScript = gameEnemyScript.GetComponent<EnemyScript>();*/
+            //set components
+            gameController.numberOfEnemies = (int)PlayerPrefs.GetFloat("enemyWaveNumber");
+            enemyMover.speed = PlayerPrefs.GetFloat("enemySpeed");
+            gameController.enemyWaveWait= PlayerPrefs.GetFloat("enemySpawnRate");
+            enemyScript.enemyShipHealth = (int)PlayerPrefs.GetFloat("enemyHealth");
+            enemyScript.enemyShipBulletPower = (int)PlayerPrefs.GetFloat("enemyBulletPower");
+            gameController.hazardCount = (int)PlayerPrefs.GetFloat("numberOfHazards");
+            gameController.spawnWait = PlayerPrefs.GetFloat("hazardSpawnRate");
+            collisionChekerPlayer.healthPowerUp = PlayerPrefs.GetFloat("powerUpHealthRecovery");
+            collisionChekerPlayer.bulletPowerPowerUp = (int)PlayerPrefs.GetFloat("powerUpBulletStrength");
+            collisionChekerPlayer.bulletSpeedPowerUp = (int)PlayerPrefs.GetFloat("powerUpBulletSpeed");
+            collisionChekerPlayer.healthPowerUpHealthBar= PlayerPrefs.GetFloat("powerUpHealthIncrease");
+            gameController.powerUpCount = (int)PlayerPrefs.GetFloat("powerUpSpawnRate");
+            playerController.bulletSpeed = (int)PlayerPrefs.GetFloat("playerBulletSpeed");
+            gameController.wormHoleCount = (int)PlayerPrefs.GetFloat("numberofWormholes");
+            gameController.wormHoleWaveWait = PlayerPrefs.GetFloat("wormholeSpawnRate");
+            Debug.Log("Success");
+        }
 
     }
 
-  
-        void AddEnemies()
+
+
+ 
+
+    void Awake()
+    {
+        gamePlayerController = GameObject.FindWithTag("Player");
+        playerController = gamePlayerController.GetComponent<PlayerController>();
+        gameCollisionChekerPlayer = GameObject.FindWithTag("Player");
+        collisionChekerPlayer = gameCollisionChekerPlayer.GetComponent<CollisionChekerPlayer>();
+
+    }
+
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(5f);
+    }
+
+    private IEnumerator DelayLoadLevel()
+    {
+        //Seed Tracking components
+        gameGameController = GameObject.FindWithTag("GameController");
+        gameController = gameGameController.GetComponent<GameController>();
+        gameEnemyMover = GameObject.FindWithTag("EnemyShip");
+        enemyMover = gameEnemyMover.GetComponent<EnemyMover>();
+        gameEnemyScript = GameObject.FindWithTag("EnemyShip");
+        enemyScript = gameEnemyScript.GetComponent<EnemyScript>();
+     
+       
+        //Saving Components for Seed
+
+        PlayerPrefs.SetFloat("enemyWaveNumber", gameController.numberOfEnemies);
+        PlayerPrefs.SetFloat("enemySpeed", enemyMover.speed);
+        PlayerPrefs.SetFloat("enemySpawnRate",gameController.enemyWaveWait);
+        PlayerPrefs.SetFloat("enemyHealth", enemyScript.enemyShipHealth);
+        PlayerPrefs.SetFloat("enemyBulletPower", enemyScript.enemyShipBulletPower);
+        PlayerPrefs.SetFloat("enemyBulletSpeed",1); //placeholder
+        PlayerPrefs.SetFloat("numberOfHazards",gameController.hazardCount);
+        PlayerPrefs.SetFloat("hazardSpawnRate", gameController.spawnWait);
+        PlayerPrefs.SetFloat("powerUpHealthRecovery", collisionChekerPlayer.healthPowerUp);
+        PlayerPrefs.SetFloat("powerUpBulletStrength", collisionChekerPlayer.bulletPowerPowerUp);
+        PlayerPrefs.SetFloat("powerUpBulletSpeed", collisionChekerPlayer.bulletSpeedPowerUp);
+        PlayerPrefs.SetFloat("powerUpHealthIncrease", collisionChekerPlayer.healthPowerUpHealthBar);
+        PlayerPrefs.SetFloat("powerUpSpawnRate", gameController.powerUpCount);
+        PlayerPrefs.SetFloat("playerBulletSpeed", playerController.bulletSpeed);
+        PlayerPrefs.SetFloat("numberofWormholes", gameController.wormHoleCount);
+        PlayerPrefs.SetFloat("wormholeSpawnRate", gameController.wormHoleWaveWait);
+        //end of seed components
+        //saving Score
+        PlayerPrefs.SetInt("Score", score);
+        //end of saving score
+        yield return new WaitForSeconds(2f);
+        Debug.Log("got this far!!");
+        SceneManager.LoadScene("GameOver");
+        Seed a = new Seed();
+        a.SaveSeed(a);
+    }
+    void Update()
+    {
+        //Check if player is destroyed or health is below zero= game over conditions
+        if (healthBarSlider.value <= 0 || GameObject.FindGameObjectWithTag("Player")==null)
+        {
+            isGameOver = true;
+            StartCoroutine(DelayLoadLevel());
+            // yield return new WaitForSeconds(2);
+
+        }
+       
+
+    }
+
+
+
+    void AddEnemies()
     {
         
         enemiesList = new List<GameObject>();
@@ -104,28 +229,6 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("didnt work");
         }
-    }
-    void Update()
-    {
-        //Debug.Log("Are All Enemies Dead? :" + allEnemiesDead);
-       
-        
-        //Spawn Enemies
-       /* int counter = 0;
-        for(int e=0; e<enemiesList.Count; e++)
-        {
-            if (enemiesList[e].gameObject.GetComponent<EnemyScript>().enemyShipHealth == 0)
-            {
-                counter += 1;
-            }
-        }
-        if (counter == enemiesList.Count)
-        {
-            allEnemiesDead = true;
-            RemoveEnemies();
-            AddEnemies();
-        }*/
-        
     }
 
 
@@ -181,39 +284,11 @@ public class GameController : MonoBehaviour
                 GameObject enemya=(GameObject)Instantiate(enemy, new Vector3(5, 2, -4), enemy.transform.rotation);
                 GameObject enemyb= (GameObject)Instantiate(enemy, new Vector3(5, 0, -4), enemy.transform.rotation);
                 GameObject enemyc = (GameObject)Instantiate(enemy, new Vector3(5, -2, -4), enemy.transform.rotation);
-                //movement
-              //  enemyWaypoint1.position = new Vector3(enemya.transform.position.x, enemya.transform.position.y + radius, enemya.transform.position.z);
-             //   enemya.transform.position = Vector3.MoveTowards(enemya.transform.position, enemyWaypoint1.position, 5);
-
-                // Physics2D.IgnoreCollision(this.powerUp.GetComponent<CapsuleCollider2D>(), enemy.GetComponent<CapsuleCollider2D>(), true);
+               
                 yield return new WaitForSeconds(enemyWaveWait);
             }
             yield return new WaitForSeconds(enemyWaveWait);
 
-            /*
-            AddEnemies();
-            Debug.Log("got this far");
-             yield return new WaitForSeconds(5);
-            while (true)
-            {
-
-                if (allEnemiesDead == false)
-            {
-                    Debug.Log("got this far 222");
-                    areEnemiesDead();
-            }
-
-            if (allEnemiesDead == true)
-            {
-                Debug.Log("Are All Enemies Dead? :" + allEnemiesDead);
-                RemoveEnemies();
-                allEnemiesDead = false;
-                AddEnemies();
-
-            }
-                yield return new WaitForSeconds(5);
-            }
-           */
         }
     }
 
@@ -249,6 +324,27 @@ public class GameController : MonoBehaviour
         UpdateScore();
     }
 
+    /// <summary>
+    /// Writes the given object instance to a binary file.
+    /// <para>Object type (and all child types) must be decorated with the [Serializable] attribute.</para>
+    /// <para>To prevent a variable from being serialized, decorate it with the [NonSerialized] attribute; cannot be applied to properties.</para>
+    /// </summary>
+    /// <typeparam name="T">The type of object being written to the XML file.</typeparam>
+    /// <param name="filePath">The file path to write the object instance to.</param>
+    /// <param name="objectToWrite">The object instance to write to the XML file.</param>
+    /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
+    ///  https://stackoverflow.com/questions/16352879/write-list-of-objects-to-a-file
+    public static void WriteToBinaryFile<T>(string filePath, T objectToWrite, bool append = false)
+    {
+        using (Stream stream = File.Open(filePath, append ? FileMode.Append : FileMode.Create))
+        {
+            var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            binaryFormatter.Serialize(stream, objectToWrite);
+        }
+    }
 
+
+
+   
 }
 

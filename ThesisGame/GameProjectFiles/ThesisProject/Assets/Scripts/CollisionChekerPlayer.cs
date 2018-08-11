@@ -9,7 +9,7 @@ public class CollisionChekerPlayer : MonoBehaviour {
     public Slider bulletSpeedSlider;
     public Slider bulletPowerSlider;
     public Text gameOverText;   //reference for text
-    private bool isGameOver = false; //flag to see if game is over
+    public bool isGameOver = false; //flag to see if game is over
                                      // private int health = healthBarSlider.value;
     public float hazardDamage;
     public float healthPowerUp;
@@ -23,6 +23,7 @@ public class CollisionChekerPlayer : MonoBehaviour {
     private RectTransform HPSliderRect;
     public Text HPText;
     private int hp;
+
     void Start()
     {
         //bulletSpeedPowerUp = 300;
