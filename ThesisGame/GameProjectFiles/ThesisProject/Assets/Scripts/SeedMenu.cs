@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 public class SeedMenu : MonoBehaviour {
     public InputField seedInputField;
-    private string inputedSeed;
+    private int inputedSeed;
     private string initial;
     
 
@@ -17,24 +18,27 @@ public class SeedMenu : MonoBehaviour {
     }
     public void SubmitSeed()
     {
-        EnterSeed();
-        PlayerPrefs.SetInt("hasEnteredSeed", 1);
-        SceneManager.LoadScene("Menu");
+        //EnterSeed();
+        inputedSeed = Int32.Parse(seedInputField.text);
+        PlayerPrefs.SetInt("Seed",inputedSeed);
+        SceneManager.LoadScene("Main");
     }
     // Use this for initialization
     void Start () {
-        inputedSeed=seedInputField.text;
+       
         PlayerPrefs.SetInt("hasEnteredSeed", 0);
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
+ 
     public void EnterSeed()
     {
-        string path = "Assets/Resources/Seeds.txt";
+        string path = System.IO.Path.Combine(Environment.GetFolderPath(
+    Environment.SpecialFolder.Desktop),"Highscores.txt") ;
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
         initial = reader.ReadToEnd();

@@ -5,10 +5,11 @@ using UnityEngine;
 public class TileCollision : MonoBehaviour {
     public float speed;
     public new Rigidbody2D rigidbody;
-
+   
     void Start()
     {
-            rigidbody.velocity = transform.right * speed;
+    
+        rigidbody.velocity = transform.right * speed;
  
     }
 
@@ -23,8 +24,9 @@ public class TileCollision : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Projectile")
         {
+
             Destroy(col.gameObject);
-           
+
         }
         else if (col.gameObject.tag == "EnemyProjectile")
         {
@@ -48,8 +50,13 @@ public class TileCollision : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Player")
         {
-            Destroy(col.gameObject);
+           
 
+        }
+        else if (col.gameObject.tag == "Laser")
+        {
+            Destroy(col.gameObject);
+           
         }
 
     }

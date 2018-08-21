@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114757920611266676}
   - component: {fileID: 114693613373277044}
   - component: {fileID: 114511734147648854}
+  - component: {fileID: 114518790034742598}
   m_Layer: 14
   m_Name: PowerUp
   m_TagString: PowerUp
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1099039540006556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8987825, y: -0.14663145, z: -4}
+  m_LocalPosition: {x: 1.5364883, y: 0.6659808, z: -3}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +79,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.053906366, y: 0.12000002}
-  m_Size: {x: 1.93, y: 1.86}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.14, y: 2.39}
   m_Direction: 0
 --- !u!114 &114511734147648854
 MonoBehaviour:
@@ -94,6 +95,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 120
   random: 1
+--- !u!114 &114518790034742598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099039540006556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d35f7704b7cce4da00306b47b2de9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
 --- !u!114 &114693613373277044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,8 +178,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e6f6651dfa626694eb14ea63c72c408c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: af5a39b50d623524babdb6cf313718e4, type: 3}
+  m_Color: {r: 1, g: 0, b: 0.927835, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

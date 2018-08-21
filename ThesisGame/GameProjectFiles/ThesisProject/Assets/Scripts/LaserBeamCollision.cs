@@ -10,13 +10,12 @@ public class LaserBeamCollision : MonoBehaviour {
         if (col.gameObject.tag == "Wormhole")
         {
             
-            Destroy(col.gameObject);
+            
             Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Projectile")
         {
-            Destroy(col.gameObject);
-            Destroy(gameObject);
+           
         }
         else if (col.gameObject.tag == "EnemyProjectile")
         {
@@ -25,18 +24,14 @@ public class LaserBeamCollision : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Hazard")
         {
-            Destroy(col.gameObject);
-            Destroy(gameObject);
         }
         else if (col.gameObject.tag == "Enemy")
         {
-            Destroy(col.gameObject);
-            Destroy(gameObject);
+           
         }
         else if (col.gameObject.tag == "EnemyShip")
         {
-            Destroy(col.gameObject);
-            Destroy(gameObject);
+          
         }
        
     }

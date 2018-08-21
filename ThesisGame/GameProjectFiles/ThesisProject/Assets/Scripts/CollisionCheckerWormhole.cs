@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionCheckerWormhole : MonoBehaviour {
     private GameController gameController;
     public int scoreValue;
+    public GameObject explosion;
     void Start()
     {
         GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -22,6 +23,7 @@ public class CollisionCheckerWormhole : MonoBehaviour {
         //all projectile colliding game objects should be tagged "Enemy" or whatever in inspector but that tag must be reflected in the below if conditional
         if (col.gameObject.tag == "Player")
         {
+           
             //Destroy(col.gameObject);
             //add an explosion or something
             //destroy the projectile that just caused the trigger collision
@@ -47,6 +49,10 @@ public class CollisionCheckerWormhole : MonoBehaviour {
         {
             Destroy(col.gameObject);
         }
+        else if (col.gameObject.tag == "Epic")
+        {
+            Destroy(col.gameObject);
+        }
         else if (col.gameObject.tag == "PowerUp")
         {
             Destroy(col.gameObject);
@@ -59,12 +65,21 @@ public class CollisionCheckerWormhole : MonoBehaviour {
         {
             Destroy(col.gameObject);
         }
+        else if (col.gameObject.tag == "EnemyShipTwo")
+        {
+            Destroy(col.gameObject);
+        }
+        else if (col.gameObject.tag == "EnemyShipThree")
+        {
+            Destroy(col.gameObject);
+        }
         else if (col.gameObject.tag == "PowerUpHealthUp")
         {
             Destroy(col.gameObject);
         }
         else if (col.gameObject.tag == "Laser")
         {
+            Instantiate(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
             gameController.AddScore(scoreValue);
         }

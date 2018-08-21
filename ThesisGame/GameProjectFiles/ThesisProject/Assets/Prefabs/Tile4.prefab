@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114839030439546378}
   m_Layer: 17
   m_Name: Tile4
-  m_TagString: Untagged
+  m_TagString: TilePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1532396681937018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.54, y: -1.92, z: -5.71}
+  m_LocalPosition: {x: 3.54, y: -1.92, z: -3}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

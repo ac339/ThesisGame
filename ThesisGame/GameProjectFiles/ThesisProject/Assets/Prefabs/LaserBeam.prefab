@@ -23,11 +23,10 @@ GameObject:
   - component: {fileID: 70024580847842348}
   - component: {fileID: 50547498386960784}
   - component: {fileID: 114128676551596686}
-  - component: {fileID: 114467990126878498}
-  - component: {fileID: 114717422290952194}
-  m_Layer: 11
+  - component: {fileID: 114765120141475998}
+  m_Layer: 13
   m_Name: LaserBeam
-  m_TagString: Laser
+  m_TagString: BossProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1461467400355042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.94112414, y: -0.30818683, z: -4}
+  m_LocalPosition: {x: -0.94112414, y: -0.30818683, z: -3}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b6524bfa6133844a7186f1167bb44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114467990126878498
+--- !u!114 &114765120141475998
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -99,18 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1461467400355042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1afa0670333617439d13e369cd0d6d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114717422290952194
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1461467400355042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f043632fec9381a4ea2e91dad29f7c9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bb569bd5336f4f439c5438dc7114f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212138040038206538

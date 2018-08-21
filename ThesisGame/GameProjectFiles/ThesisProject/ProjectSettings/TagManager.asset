@@ -15,6 +15,17 @@ TagManager:
   - Wormhole
   - PowerUpHealthUp
   - Laser
+  - Boss
+  - Tiles
+  - EnemyTwoProjectile
+  - EnemyThreeProjectile
+  - EnemyShipTwo
+  - EnemyShipThree
+  - BossProjectile
+  - TilePanel
+  - Turret
+  - TurretProj
+  - Epic
   layers:
   - Default
   - TransparentFX
@@ -34,8 +45,8 @@ TagManager:
   - Hazard
   - Wormhole
   - Tiles
-  - 
-  - 
+  - Laser
+  - Boss
   - 
   - 
   - 

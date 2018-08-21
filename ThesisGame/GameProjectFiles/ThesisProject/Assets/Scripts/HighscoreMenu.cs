@@ -7,84 +7,147 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using System;
+using SimpleJSON;
+
 
 public class HighscoreMenu : MonoBehaviour {
-    public TextMeshProUGUI highscoreText;
+
+    //public TextMeshProUGUI highscoreText;
+    public TextMeshProUGUI playerNameText;
+    public TextMeshProUGUI playerScoreText;
+    public TextMeshProUGUI playerSeedText;
     private string initial;
     private List<string> HighScoreMenuScores;
+    private List<Scoreboard> Scoreboards = new List<Scoreboard>();
+    public InputField seedInputField;
+    private List<Scoreboard> SortedList;
     // Use this for initialization
     void Awake()
     {
         HighScoreMenuScores = new List<string>();
     }
     void Start () {
-       LoadScores();
-	}
+
+        
+        StartCoroutine(Processjson());
+     
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+     
+
+    }
 
     public void MainMenu()
     {
         SceneManager.LoadScene("Menu");
     }
-
-    public void LoadScores()
+    
+    public void Reset()
     {
+        seedInputField.text= "";
+      
+        StartCoroutine(Processjson());
+    }
+
+    public void SortButton() {
+
+        StopAllCoroutines();
+
        
-        string path = "Assets/Resources/Highscores.txt";
-
-        //Read the text from directly from the test.txt file
-        StreamReader reader = new StreamReader(path);
-
-
-        initial = reader.ReadToEnd();
-        var lines = initial.Split(new char[] { '\n' });
-        Debug.Log("Lines:" + lines[0] + "pause"+ lines[0]);
-        int count = lines.Length;
-        HighScoreMenuScores.Add("Player");
-        HighScoreMenuScores.Add("Score");
-       // Debug.Log("length of scoreboard table:" + HighScoreMenuScores.Count());
-        //Debug.Log("processedscores are:" + HighScoreMenuScores[0].ToString());
-        for (int i = 0; i < count; i++)
+        int countingtop9 = 0;
+        for (int s = 0; s < SortedList.Count; s++)
         {
-            var lineseperated = lines[i].Split(new char[] { ',' });
-            Debug.Log("lineseparted" + lineseperated[0]);
-            HighScoreMenuScores.Add(lineseperated[0]);
-            HighScoreMenuScores.Add(lineseperated[1]);
+            if (s == 0)
+            {
+                playerNameText.text = "";
+                playerScoreText.text = "";
+                playerSeedText.text = "";
+                playerNameText.text = "Player" + '\n';
+                playerScoreText.text = "Score" + '\n';
+                playerSeedText.text = "Seed" + '\n';
+            }
+            if (SortedList[s].Seed.Equals(int.Parse(seedInputField.text)))
+            {
+                playerNameText.text += SortedList[s].Name.ToString() + '\n';
+                playerScoreText.text += SortedList[s].Score.ToString() + '\n';
+                playerSeedText.text += SortedList[s].Seed.ToString() + '\n';
+                countingtop9++;
+            }
+
+
+          
+
+            if (countingtop9 == 9)
+            {
+                break;
+            }
             
         }
-        string processedscores="";
-        for(int a = 0; a < HighScoreMenuScores.Count()-1; a=a+2)
+        if (countingtop9 == 0)
         {
-            string space = "           ";
-            int letterdifference=0;
-            if (a + 2 > HighScoreMenuScores.Count() - 1)
-            {
-                 letterdifference = Math.Abs(HighScoreMenuScores[a].Length - HighScoreMenuScores[a - 2].Length);
-            }
-            else if (HighScoreMenuScores[a + 1].Contains("Score"))
-            {
-                space = "           ";
-
-            }
-            else
-            {
-                 letterdifference = Math.Abs(HighScoreMenuScores[a].Length - HighScoreMenuScores[a + 2].Length);
-            }
-
-            for(int s=0;s< letterdifference; s++)
-            {
-                space += " ";
-            }
+            playerNameText.text = "No";
+            playerScoreText.text = "Seed";
+            playerSeedText.text = "Found";
             
-            processedscores += HighScoreMenuScores[a].ToString() + space + HighScoreMenuScores[a+1].ToString() + '\n';
         }
-        highscoreText.text = processedscores;
-       Debug.Log("Lines are:" + count);
-       
-        reader.Close();
+
+    }
+
+
+    public IEnumerator Processjson()
+    {
+        Scoreboards.Clear();
+        playerNameText.text = "";
+        playerScoreText.text = "";
+        playerSeedText.text = "";
+        String json;
+        WWW text = new WWW("https://alexclearythesisgame.firebaseio.com/Scoreboard.json?orderBy=" + "\"" + "score" + "\"" + "&print=pretty");
+        while (!text.isDone)
+        {
+            yield return null;
+        }
+        json = text.text;
+        var N = SimpleJSON.JSON.Parse(json);
+        int length = 9;
+        if (N.Count > length)
+        {
+            length = N.Count;
+        }
+        else
+        {
+            length = 9;
+        }
+        String[] names = new String[length];
+        int[] scores = new int[length];
+        int[] seeds = new int[length];
+        for (int i = 0; i < length; i++)
+        {
+            names[i] = N[i]["name"].Value;
+            scores[i] = Int32.Parse( N[i]["score"].Value);
+            seeds[i] = Int32.Parse(N[i]["seed"].Value);
+           
+        }
+        
+        for(int j=0; j < names.Length; j++)
+        {
+            Scoreboard s = new Scoreboard(names[j], scores[j],seeds[j]);
+            Scoreboards.Add(s);
+        }
+        //sort list by Score and Seed
+        SortedList = Scoreboards.OrderByDescending(s => s.Score).ThenByDescending(e => e.Seed).ToList();
+        //present top 9 from sorted list
+        playerNameText.text += "Player" + '\n';
+        playerScoreText.text += "Score" + '\n';
+        playerSeedText.text += "Seed" + '\n';
+        for (int s = 0; s < 9; s++)
+        {
+            playerNameText.text += SortedList[s].Name.ToString() + '\n';
+            playerScoreText.text += SortedList[s].Score.ToString() + '\n';
+            playerSeedText.text += SortedList[s].Seed.ToString() + '\n';
+        }
+        yield break;
+
     }
 }
