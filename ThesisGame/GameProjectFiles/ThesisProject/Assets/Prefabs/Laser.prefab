@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4583699720562404}
   - component: {fileID: 114393237906396446}
   - component: {fileID: 114248135680401410}
-  - component: {fileID: 114535036326440444}
   - component: {fileID: 50314366391482262}
   m_Layer: 11
   m_Name: Laser
@@ -92,14 +91,3 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967039
---- !u!114 &114535036326440444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1368303681177548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1afa0670333617439d13e369cd0d6d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

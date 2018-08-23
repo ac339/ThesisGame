@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4456953604885572}
   - component: {fileID: 212575019667062088}
   - component: {fileID: 50999764361201662}
-  - component: {fileID: 114161530042641728}
   - component: {fileID: 114577072973013298}
   - component: {fileID: 114179238568144968}
+  - component: {fileID: 114755524813932676}
   m_Layer: 9
   m_Name: BackgroundSpaceship One
   m_TagString: Untagged
@@ -95,20 +95,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114161530042641728
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1253128679421438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aea1bf130e238f44e99e463f16290204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  rigidbody: {fileID: 50999764361201662}
-  random: 0
 --- !u!114 &114179238568144968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +118,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprite: {fileID: 212575019667062088}
+--- !u!114 &114755524813932676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253128679421438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bb9eb9bd03b7e498606acb61965973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  SpaceshipRigidbody: {fileID: 50999764361201662}
+  RandomChecker: 0
 --- !u!198 &198027025785445436
 ParticleSystem:
   m_ObjectHideFlags: 1

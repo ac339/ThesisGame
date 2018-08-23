@@ -29,7 +29,7 @@ public class LaserBeamCollision : MonoBehaviour {
         }
         else if (col.gameObject.tag == "Enemy")
         {
-           
+            Destroy(gameObject);
         }
         else if (col.gameObject.tag == "EnemyShip")
         {

@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.IO;
-using UnityEngine.UI;
+ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using System;
-using SimpleJSON;
-/*
+ /*
  *  Script that handles actions in the Highscore menu screen/scene
  * 
  * 

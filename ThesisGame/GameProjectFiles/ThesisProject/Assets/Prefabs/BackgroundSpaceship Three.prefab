@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4907478708418412}
   - component: {fileID: 212055776055945700}
   - component: {fileID: 50542522237186888}
-  - component: {fileID: 114347120551805352}
   - component: {fileID: 114192863482478586}
   - component: {fileID: 114139963008854044}
+  - component: {fileID: 114573086996972108}
   m_Layer: 9
   m_Name: BackgroundSpaceship Three
   m_TagString: Untagged
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprite: {fileID: 212055776055945700}
---- !u!114 &114347120551805352
+--- !u!114 &114573086996972108
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -126,12 +126,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572646264754898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aea1bf130e238f44e99e463f16290204, type: 3}
+  m_Script: {fileID: 11500000, guid: e3bb9eb9bd03b7e498606acb61965973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  rigidbody: {fileID: 50542522237186888}
-  random: 0
+  Speed: 1
+  SpaceshipRigidbody: {fileID: 50542522237186888}
+  RandomChecker: 0
 --- !u!198 &198312436482142788
 ParticleSystem:
   m_ObjectHideFlags: 1

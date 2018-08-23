@@ -60,20 +60,15 @@
      <Compile Include="Assets\RestClient\DemoScene\Scripts\Model\User.cs" />
      <Compile Include="Assets\Scripts\BackgroundShipColour.cs" />
      <Compile Include="Assets\Scripts\BackgroundSpaceShipMover.cs" />
-     <Compile Include="Assets\Scripts\BGSpaceShipMover.cs" />
      <Compile Include="Assets\Scripts\BossBullet.cs" />
      <Compile Include="Assets\Scripts\BossMovement.cs" />
      <Compile Include="Assets\Scripts\BossRotation.cs" />
      <Compile Include="Assets\Scripts\BulletCollisionChecker.cs" />
-     <Compile Include="Assets\Scripts\BulletOffScreen.cs" />
-     <Compile Include="Assets\Scripts\CollisionChecker.cs" />
      <Compile Include="Assets\Scripts\CollisionCheckerEnemyBullet.cs" />
      <Compile Include="Assets\Scripts\CollisionCheckerHazard.cs" />
      <Compile Include="Assets\Scripts\CollisionCheckerPowerUp.cs" />
-     <Compile Include="Assets\Scripts\CollisionCheckerSpeedPowerUp.cs" />
      <Compile Include="Assets\Scripts\CollisionCheckerWormhole.cs" />
      <Compile Include="Assets\Scripts\CollisionChekerPlayer.cs" />
-     <Compile Include="Assets\Scripts\DestroyByBoundary.cs" />
      <Compile Include="Assets\Scripts\DestroyByTime.cs" />
      <Compile Include="Assets\Scripts\EnemyBossScript.cs" />
      <Compile Include="Assets\Scripts\EnemyBullet.cs" />
@@ -89,10 +84,8 @@
      <Compile Include="Assets\Scripts\GameOverMenu.cs" />
      <Compile Include="Assets\Scripts\HighscoreMenu.cs" />
      <Compile Include="Assets\Scripts\InstructionsMenu.cs" />
-     <Compile Include="Assets\Scripts\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\Laser.cs" />
      <Compile Include="Assets\Scripts\LaserBeamCollision.cs" />
-     <Compile Include="Assets\Scripts\LoadScores.cs" />
      <Compile Include="Assets\Scripts\LoadScreenDelay.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
@@ -107,12 +100,10 @@
      <Compile Include="Assets\Scripts\RepeatingBackground.cs" />
      <Compile Include="Assets\Scripts\Scoreboard.cs" />
      <Compile Include="Assets\Scripts\ScrollingObject.cs" />
-     <Compile Include="Assets\Scripts\Seed.cs" />
      <Compile Include="Assets\Scripts\SeedMenu.cs" />
      <Compile Include="Assets\Scripts\SimpleJSON.cs" />
      <Compile Include="Assets\Scripts\TileCollision.cs" />
      <Compile Include="Assets\Scripts\tilecolour.cs" />
-     <Compile Include="Assets\Scripts\TileController.cs" />
      <Compile Include="Assets\Scripts\turretColour.cs" />
      <Compile Include="Assets\Scripts\TurretShooting.cs" />
      <Compile Include="Assets\Scripts\warning.cs" />
@@ -149,16 +140,6 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-     <Compile Include="Assets\UnityHTTP-master\AssemblyInfo.cs" />
-     <Compile Include="Assets\UnityHTTP-master\lib\JSON.cs" />
-     <Compile Include="Assets\UnityHTTP-master\src\CookieJar.cs" />
-     <Compile Include="Assets\UnityHTTP-master\src\DiskCache.cs" />
-     <Compile Include="Assets\UnityHTTP-master\src\FormDataStream.cs" />
-     <Compile Include="Assets\UnityHTTP-master\src\Logger.cs" />
-     <Compile Include="Assets\UnityHTTP-master\src\Request.cs" />
-     <Compile Include="Assets\UnityHTTP-master\src\Response.cs" />
-     <Compile Include="Assets\UnityHTTP-master\src\ResponseCallbackDispatcher.cs" />
-     <Compile Include="Assets\UnityHTTP-master\src\StreamedWWWForm.cs" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
@@ -390,9 +371,6 @@
  </Reference>
  <Reference Include="TextMeshPro-2017.3-Runtime">
  <HintPath>C:/Users/clear/Desktop/ThesisGameFinalSubmission/ThesisProject/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Ionic.Zlib.CF">
- <HintPath>C:/Users/clear/Desktop/ThesisGameFinalSubmission/ThesisProject/Assets/UnityHTTP-master/lib/Ionic.Zlib.CF.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/clear/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

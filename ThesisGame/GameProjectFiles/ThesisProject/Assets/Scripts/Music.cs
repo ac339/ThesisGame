@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ * This script ensures that the background music loop gets played throughout scenes 
+ * */
 
 public class Music : MonoBehaviour {
     private static Music instance = null;

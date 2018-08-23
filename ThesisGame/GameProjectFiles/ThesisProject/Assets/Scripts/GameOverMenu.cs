@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using SimpleJSON;
-using UnityEditor;
 using Proyecto26;
 /*
  * 
@@ -70,10 +64,4 @@ public class Scores
         this.score = score;
         this.seed = seed;
     }
-}
-
-[Serializable]
-public class CustomResponse
-{
-    public int id;
 }
