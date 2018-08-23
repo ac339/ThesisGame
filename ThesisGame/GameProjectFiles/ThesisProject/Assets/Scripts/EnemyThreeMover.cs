@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * This script controls enemy type C movement. Enemy Type C's behaviour looks for the player's position on the screen, and then the enemies rotate around the player at a constant speed, while always locking their aim towards 
+ * the player's position. Script taken and adapted from the following URL: https://answers.unity.com/questions/517868/c-how-to-make-an-object-move-toward-in-a-circular.html
+ * */
 public class EnemyThreeMover : MonoBehaviour {
-     public float minRotationSpeed = 80.0f;
-    public float maxRotationSpeed = 120.0f;
-    public float minMovementSpeed = 1.75f;
-    public float maxMovementSpeed = 2.25f;
+    private float minRotationSpeed = 40.0f;
+    private float maxRotationSpeed = 80.0f;
+    private float minMovementSpeed = 1f;
+    private float maxMovementSpeed = 1.9f;
     private float rotationSpeed = 75.0f; // Degrees per second
     private float movementSpeed = 2.0f; // Units per second;
     private Transform target;

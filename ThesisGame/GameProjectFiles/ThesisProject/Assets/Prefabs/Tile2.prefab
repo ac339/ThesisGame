@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4474608999035908}
   - component: {fileID: 212655782396227860}
   - component: {fileID: 50914170680040296}
+  - component: {fileID: 60356339621189972}
   - component: {fileID: 114593601782243984}
-  - component: {fileID: 114779675745696744}
-  - component: {fileID: 61702812473861486}
   - component: {fileID: 114757026072354334}
+  - component: {fileID: 114125657804636218}
   m_Layer: 17
   m_Name: Tile2
   m_TagString: TilePanel
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61702812473861486
-BoxCollider2D:
+--- !u!60 &60356339621189972
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -87,9 +87,23 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.69, y: 0.61}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.345, y: 0.305}
+      - {x: -0.345, y: -0.305}
+      - {x: 0.345, y: -0.305}
+      - {x: 0.345, y: 0.305}
+--- !u!114 &114125657804636218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1490839790501876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5c7b925d7e11149b3327bbd0aef45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114593601782243984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,8 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a7cf566401b404287aadfd4a538868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
-  rigidbody: {fileID: 50914170680040296}
+  Speed: -1
+  Rigidbody: {fileID: 50914170680040296}
 --- !u!114 &114757026072354334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,17 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b5ed67ddc7c63469b2bba7d9c9e4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114779675745696744
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1490839790501876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b6524bfa6133844a7186f1167bb44b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Sprite: {fileID: 212655782396227860}
 --- !u!212 &212655782396227860
 SpriteRenderer:
   m_ObjectHideFlags: 1

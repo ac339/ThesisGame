@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour {
 
-    public bool freezeRotation;
+    public bool FreezeRotation;
     private Transform player;
-    public float range = 1000.0f;
-    public float bulletImpulse = 20.0f;
+    public float Range ;
+    public float BulletImpulse ;
 
 
     private bool onRange = true;
 
     public GameObject projectile;
 
+    //Variable initialization 
     void Start () {
         GameObject playerControllerObject = GameObject.FindWithTag("Player");
         player = playerControllerObject.GetComponent<Transform>();
@@ -22,6 +23,7 @@ public class EnemyBullet : MonoBehaviour {
     }
 
 
+    //projectiles are shot towards player once in range
     void Shoot()
     {
 
@@ -29,7 +31,7 @@ public class EnemyBullet : MonoBehaviour {
         {
 
             GameObject bullet = (GameObject)(Instantiate(projectile, transform.position - transform.up, Quaternion.identity));
-            bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * -bulletImpulse, ForceMode2D.Impulse);
+            bullet.GetComponent<Rigidbody2D>().AddForce(transform.up * -BulletImpulse, ForceMode2D.Impulse);
 
 
         }
@@ -37,11 +39,11 @@ public class EnemyBullet : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
+ //Checks if player is within shooting range based on distance between enemy type A spaceship and player
     void Update () {
 
 
-        onRange = Vector2.Distance(transform.position, player.position) < range;
+        onRange = Vector2.Distance(transform.position, player.position) < Range;
 
       if (onRange)
             transform.up = -(player.position - transform.position);

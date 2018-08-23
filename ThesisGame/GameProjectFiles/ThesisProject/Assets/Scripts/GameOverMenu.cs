@@ -10,7 +10,11 @@ using UnityEngine.UI;
 using SimpleJSON;
 using UnityEditor;
 using Proyecto26;
-
+/*
+ * 
+ * 
+ * Script that handles actions to be taken in Game Over screen
+ * */
 public class GameOverMenu : MonoBehaviour
 {
     public InputField nameInputField;
@@ -38,7 +42,7 @@ public class GameOverMenu : MonoBehaviour
     }
 
 
-
+    //Player's score along with their seed and name are sent to the online database
     protected void  SendScore()
     {
         Scoreboard s = new Scoreboard(nameInputField.text, PlayerPrefs.GetInt("Score"), PlayerPrefs.GetInt("Seed"));
@@ -49,41 +53,6 @@ public class GameOverMenu : MonoBehaviour
         Scores sc = new Scores(s.Name, s.Score, s.Seed);
         RestClient.Post("https://alexclearythesisgame.firebaseio.com/Scoreboard.json", sc);
 
-
-        /*
-         *      RestClient.Post<CustomResponse>("https://alexclearythesisgame.firebaseio.com/Scoreboard.json", sc).Then(customResponse => {
-            EditorUtility.DisplayDialog("JSON", JsonUtility.ToJson(customResponse, true), "Ok");
-        });
-       RestClient.Request(new RequestHelper
-        {
-            Uri = "https://alexclearythesisgame.firebaseio.com/Scoreboard.json",
-            Timeout = 10000,
-            Headers = new Dictionary<string, string>
-            {
-                {"Content-Type", "application/json"  }
-            },
-            Body=sc,
-            ChunkedTransfer = true,
-            IgnoreHttpException = true,
-        }).Then(response => {
-            EditorUtility.DisplayDialog("Status", response.StatusCode.ToString(), "Ok");
-        });*/
-
-
-
-
-
-
-
-        /*
-         UnityHTTP.Request postRequest = new UnityHTTP.Request("post", "https://alexclearythesisgame.firebaseio.com/Scoreboard.json", data);
-        postRequest.Send((request) => {
-            Hashtable jsonObj = (Hashtable)JSON.JsonDecode(request.response.Text);
-            if (jsonObj == null)
-            {
-                Debug.LogError("server returned null or malformed response ):");
-            }
-        }); */
     }
 
 }

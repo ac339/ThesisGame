@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-
+/**
+ * This script is responsible for handling the effects of the player's interactions/collisions with other game objects and controls the game over conditions
+ * */
 public class CollisionChekerPlayer : MonoBehaviour {
 
-    public Slider healthBarSlider;  //reference for slider
-    public Slider bulletSpeedSlider;
-    public Slider bulletPowerSlider;
-    public Text gameOverText;   //reference for text
-    public bool isGameOver = false; //flag to see if game is over
-                                     // private int health = healthBarSlider.value;
-    public float hazardDamage;
-    public float healthPowerUp;
-    public float healthPowerUpHealthBar;
-    public float bulletSpeedPowerUp;
-    public float bulletPowerPowerUp;
+    public Slider HealthBarSlider;  //reference for slider
+    public Slider BulletSpeedSlider;
+    public Slider BulletPowerSlider;
+    public Text GameOverText;   //reference for text
+    public bool IsGameOver = false; //flag to see if game is over
+                                     // private int health = HealthBarSlider.value;
+    public float HazardDamage;
+    public float HealthPowerUp;
+    public float HealthPowerUpHealthBar;
+    public float BulletSpeedPowerUp;
+    public float BulletPowerPowerUp;
     private GameObject gamePlayerController;
     private PlayerController playerController;
     private GameObject gameEnemyScript;
@@ -30,10 +32,8 @@ public class CollisionChekerPlayer : MonoBehaviour {
     private RectTransform HPSliderRect;
     public Text HPText;
     private float hp;
-    private TurretShooting turretShooting;
-    private GameObject gameTurretShooting;
-    public GameObject explosion;
-    public Transform playerPosition;
+    public GameObject Explosion;
+    public Transform PlayerPosition;
 
     //player details
     private GameObject gameGameController;
@@ -48,25 +48,17 @@ public class CollisionChekerPlayer : MonoBehaviour {
 
     //sound effects
     private AudioSource audioSource;
-    public AudioClip soundeffect;
+    public AudioClip SoundEffect;
 
     void Start()
     {
         gameGameController = GameObject.FindWithTag("GameController");
         gameController = gameGameController.GetComponent<GameController>();
-        //bulletSpeedPowerUp = 300;
-        /*hazardDamage = gameController.hazardHealth *gameController.newGamePlusMultiplier;
-        healthPowerUp= gameController.powerUpHealthRegen * gameController.newGamePlusMultiplier;
-        bulletSpeedPowerUp= gameController.powerupSpeedInt * gameController.newGamePlusMultiplier;
-        bulletPowerPowerUp= gameController.powerUpBulletStrength * gameController.newGamePlusMultiplier;
-        healthPowerUpHealthBar = gameController.powerUpExpandHealthBar * gameController.newGamePlusMultiplier;
-        tileDamage = gameController.myRandom.Next(5, 10);
-        bossDamage = gameController.myRandom.Next(10, 20);*/
-        hp = healthBarSlider.value;
+        hp = HealthBarSlider.value;
         gamePlayerController = GameObject.FindWithTag("Player");
         playerController = gamePlayerController.GetComponent<PlayerController>();
-        HPSliderRect = healthBarSlider.GetComponent<RectTransform>();
-        gameOverText.enabled = false; //disable GameOver text on start
+        HPSliderRect = HealthBarSlider.GetComponent<RectTransform>();
+        GameOverText.enabled = false; //disable GameOver text on start
         UpdateHP();
         originalColor = gameObject.GetComponent<SpriteRenderer>().color;
         hitColor = Color.grey;
@@ -74,35 +66,33 @@ public class CollisionChekerPlayer : MonoBehaviour {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        hazardDamage = gameController.hazardHealth * gameController.newGamePlusMultiplier;
-        healthPowerUp = gameController.powerUpHealthRegen * gameController.newGamePlusMultiplier;
-        bulletSpeedPowerUp = gameController.powerupSpeedInt * gameController.newGamePlusMultiplier;
-        bulletPowerPowerUp = gameController.powerUpBulletStrength * gameController.newGamePlusMultiplier;
-        healthPowerUpHealthBar = gameController.powerUpExpandHealthBar * gameController.newGamePlusMultiplier;
+        HazardDamage = 1 * gameController.newGamePlusMultiplier;
+        HealthPowerUp = gameController.PowerUpHealthRegen * gameController.newGamePlusMultiplier;
+        BulletSpeedPowerUp = gameController.PowerupSpeedInt * gameController.newGamePlusMultiplier;
+        BulletPowerPowerUp = gameController.PowerUpBulletStrength * gameController.newGamePlusMultiplier;
+        HealthPowerUpHealthBar = gameController.PowerUpExpandHealthBar * gameController.newGamePlusMultiplier;
         tileDamage = gameController.myRandom.Next(5, 10);
         bossDamage = gameController.myRandom.Next(10, 20);
-        //check if game is over i.e., health is greater than 0
-        // if (!isGameOver)
-        //     transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * 10f, 0, 0); //get input
-
-        if (isGameOver == false)
+         
+        //game over conditions
+        if (IsGameOver == false)
         {
-            gameOverText.enabled = false;
+            GameOverText.enabled = false;
         }
-        if (isGameOver == true)
+        if (IsGameOver == true)
         {
-            gameOverText.enabled = true;
+            GameOverText.enabled = true;
         }
 
         UpdateHP();
-        if (healthBarSlider.value < 1)
+        if (HealthBarSlider.value < 1)
         {
-            isGameOver = true;    //set game over to true
-            gameOverText.enabled = true; //enable GameOver text
-            Instantiate(explosion, transform.position, transform.rotation);
+            IsGameOver = true;    //set game over to true
+            GameOverText.enabled = true; //enable GameOver text
+            Instantiate(Explosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
@@ -113,174 +103,179 @@ public class CollisionChekerPlayer : MonoBehaviour {
         enemyTypeTwoScript = gameEnemyTypeTwoScript.GetComponent<EnemyTypeTwoScript>();
         gameEnemyTypeThreeScript = GameObject.FindWithTag("EnemyShipThree");
         enemyTypeThreeScript = gameEnemyTypeThreeScript.GetComponent<EnemyTypeThreeScript>();
-        //turret
-        gameTurretShooting = GameObject.FindWithTag("Turret");
-        turretShooting = gameTurretShooting.GetComponent<TurretShooting>();
-    }
+          }
 
-
+    //keeps the player's spaceship HP points constantly udpated 
     void UpdateHP()
     {
-        hp = (int)healthBarSlider.value;
-        HPText.text = "HP : " + hp +"/" + healthBarSlider.maxValue;
+        hp = (int)HealthBarSlider.value;
+        HPText.text = "HP : " + hp +"/" + HealthBarSlider.maxValue;
     }
    
 
-    //Check if player enters/stays on the fire
+    //Checks players collisions with other game objects
     void OnCollisionEnter2D(Collision2D col)
     {
-        //if player triggers fire object and health is greater than 0
-        if (col.gameObject.tag == "Enemy" && healthBarSlider.value > 0)
+        
+        if (col.gameObject.tag == "Enemy" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= hazardDamage;  //reduce health
-           // Destroy(col.gameObject);
+            HealthBarSlider.value -= HazardDamage;  //reduce health
+ 
         }
-        else if(col.gameObject.tag == "PowerUp" && healthBarSlider.value <= healthBarSlider.maxValue)
+        else if(col.gameObject.tag == "PowerUp" && HealthBarSlider.value <= HealthBarSlider.maxValue)
         {
             audioSource = GetComponent<AudioSource>();
-            audioSource.clip = soundeffect;
+            audioSource.clip = SoundEffect;
+            audioSource.priority = 0;
             audioSource.Play();
             powerUpColor = Color.cyan;
             gameObject.GetComponent<SpriteRenderer>().color = powerUpColor;
             Invoke("ResetColor", powerUpDuration);
-            if (healthBarSlider.value == healthBarSlider.maxValue)
+            if (HealthBarSlider.value == HealthBarSlider.maxValue)
             {
 
-                healthBarSlider.value = healthBarSlider.maxValue;
+                HealthBarSlider.value = HealthBarSlider.maxValue;
             }
             else
             {
-                healthBarSlider.value += healthPowerUp;
+                HealthBarSlider.value += HealthPowerUp;
                 
             }
           
             Destroy(col.gameObject);
         }
-        else if (col.gameObject.tag == "PowerUp" && healthBarSlider.value + healthPowerUp > healthBarSlider.maxValue)
+        else if (col.gameObject.tag == "PowerUp" && HealthBarSlider.value + HealthPowerUp > HealthBarSlider.maxValue)
         {
             audioSource = GetComponent<AudioSource>();
-            audioSource.clip = soundeffect;
+            audioSource.clip = SoundEffect;
+            audioSource.priority = 0;
             audioSource.Play();
             gameObject.GetComponent<SpriteRenderer>().color = powerUpColor;
             Invoke("ResetColor", powerUpDuration);
-            healthBarSlider.value += healthBarSlider.value + healthPowerUp - healthBarSlider.maxValue;
+            HealthBarSlider.value += HealthBarSlider.value + HealthPowerUp - HealthBarSlider.maxValue;
             Destroy(col.gameObject);
         }
 
-        else if (col.gameObject.tag == "EnemyShip" && healthBarSlider.value >0)
+        else if (col.gameObject.tag == "EnemyShip" && HealthBarSlider.value >0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.enemyShipHealth;
+            HealthBarSlider.value -= gameController.EnemyShipHealth;
             Destroy(col.gameObject);
         }
-        else if (col.gameObject.tag == "EnemyShipTwo" && healthBarSlider.value > 0)
+        else if (col.gameObject.tag == "EnemyShipTwo" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.enemyShipTwoHealth;
+            HealthBarSlider.value -= gameController.EnemyShipTwoHealth;
             Destroy(col.gameObject);
         }
-        else if (col.gameObject.tag == "EnemyShipThree" && healthBarSlider.value > 0)
+        else if (col.gameObject.tag == "EnemyShipThree" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.enemyShipThreeHealth;
+            HealthBarSlider.value -= gameController.EnemyShipThreeHealth;
             Destroy(col.gameObject);
         }
-        else if (col.gameObject.tag == "EnemyProjectile" && healthBarSlider.value > 0)
+        else if (col.gameObject.tag == "EnemyProjectile" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.enemyShipBulletPower;
+            HealthBarSlider.value -= gameController.EnemyShipBulletPower;
             Destroy(col.gameObject);
         }
-        else if (col.gameObject.tag == "EnemyTwoProjectile" && healthBarSlider.value > 0)
+        else if (col.gameObject.tag == "EnemyTwoProjectile" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.enemyShipTwoBulletPower;
+            HealthBarSlider.value -= gameController.EnemyShipTwoBulletPower;
             Destroy(col.gameObject);
         }
-        else if (col.gameObject.tag == "EnemyThreeProjectile" && healthBarSlider.value > 0)
+        else if (col.gameObject.tag == "EnemyThreeProjectile" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.enemyShipThreeBulletPower;
+            HealthBarSlider.value -= gameController.EnemyShipThreeBulletPower;
             Destroy(col.gameObject);
         }
         else if (col.gameObject.tag == "Speed")
         {
             audioSource = GetComponent<AudioSource>();
-            audioSource.clip = soundeffect;
+            audioSource.clip = SoundEffect;
+            audioSource.priority = 0;
             audioSource.Play();
             powerUpColor = Color.green;
             gameObject.GetComponent<SpriteRenderer>().color = powerUpColor;
             Invoke("ResetColor", powerUpDuration);
-            bulletSpeedSlider.value += bulletSpeedPowerUp;
+            BulletSpeedSlider.value += BulletSpeedPowerUp;
             Destroy(col.gameObject);
         }
         else if (col.gameObject.tag == "Power")
         {
             audioSource = GetComponent<AudioSource>();
-            audioSource.clip = soundeffect;
+            audioSource.clip = SoundEffect;
+            audioSource.priority = 0;
             audioSource.Play();
             powerUpColor = Color.red;
             gameObject.GetComponent<SpriteRenderer>().color = powerUpColor;
             Invoke("ResetColor", powerUpDuration);
-            bulletPowerSlider.value += bulletPowerPowerUp;
+            BulletPowerSlider.value += BulletPowerPowerUp;
             Destroy(col.gameObject);
         }
         else if (col.gameObject.tag == "PowerUpHealthUp")
         {
             audioSource = GetComponent<AudioSource>();
-            audioSource.clip = soundeffect;
+            audioSource.clip = SoundEffect;
+            audioSource.priority = 0;
             audioSource.Play();
             powerUpColor = Color.blue;
             gameObject.GetComponent<SpriteRenderer>().color = powerUpColor;
             Invoke("ResetColor", powerUpDuration);
-            healthBarSlider.maxValue += healthPowerUpHealthBar;
-            healthBarSlider.value += healthPowerUpHealthBar;
-            HPSliderRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, healthBarSlider.maxValue+ healthPowerUpHealthBar);
-            healthBarSlider.transform.position = new Vector3(healthBarSlider.transform.position.x, healthBarSlider.transform.position.y);
-           
+            HealthBarSlider.value += HealthPowerUpHealthBar;
+            if (HealthBarSlider.maxValue < 250) {
+            HealthBarSlider.maxValue += HealthPowerUpHealthBar;
+        
+            HPSliderRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, HealthBarSlider.maxValue+ HealthPowerUpHealthBar);
+            HealthBarSlider.transform.position = new Vector3(HealthBarSlider.transform.position.x, HealthBarSlider.transform.position.y);
+            }
             Destroy(col.gameObject);
         }
-         else if (col.gameObject.tag == "TilePanel" && healthBarSlider.value > 0)
+         else if (col.gameObject.tag == "TilePanel" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.tileDamage;
+            HealthBarSlider.value -= gameController.TileDamage;
             
         }
-        else if (col.gameObject.tag == "Boss" && healthBarSlider.value > 0)
+        else if (col.gameObject.tag == "Boss" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.bossTouchDamage;
+            HealthBarSlider.value -= gameController.BossTouchDamage;
 
         }
-        else if (col.gameObject.tag == "BossProjectile" && healthBarSlider.value > 0)
+        else if (col.gameObject.tag == "BossProjectile" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.bossBulletDamage;
+            HealthBarSlider.value -= gameController.BossBulletDamage;
 
         }
-        else if (col.gameObject.tag == "TurretProj" && healthBarSlider.value > 0)
+        else if (col.gameObject.tag == "TurretProj" && HealthBarSlider.value > 0)
         {
             gameObject.GetComponent<SpriteRenderer>().color = hitColor;
             Invoke("ResetColor", duration);
-            healthBarSlider.value -= gameController.turretBulletPower;
+            HealthBarSlider.value -= gameController.TurretBulletPower;
             Destroy(col.gameObject);
         }
         else if (col.gameObject.tag == "Epic")
         {
 
             audioSource = GetComponent<AudioSource>();
-            audioSource.clip = soundeffect;
+            audioSource.clip = SoundEffect;
+            audioSource.priority = 0;
             audioSource.Play();
 
             powerUpColor = Color.magenta;
@@ -288,15 +283,13 @@ public class CollisionChekerPlayer : MonoBehaviour {
             Invoke("ResetColor", powerUpDuration);
             gameObject.GetComponent<SpriteRenderer>().color = powerUpColor;
             Invoke("ResetColor", duration);
-            var go = Instantiate(gameObject,playerPosition.position + new Vector3(0,1,0), playerPosition.rotation);
-            var gotwo = Instantiate(gameObject, playerPosition.position + new Vector3(0, -1, 0), playerPosition.rotation);
+            var go = Instantiate(gameObject,PlayerPosition.position + new Vector3(0,1,0), PlayerPosition.rotation);
+            var gotwo = Instantiate(gameObject, PlayerPosition.position + new Vector3(0, -1, 0), PlayerPosition.rotation);
             
             Destroy(go, 6.0f);
             Destroy(gotwo,6.0f);
             Destroy(col.gameObject);
-            /*Instantiate(Resources.Load("Attack1"), new Vector3(opponent.transform.position.x, opponent.transform.position.y + 1.5f, opponent.transform.position.z), Quaternion.identity);
-            healthBarSlider.value -= gameController.turretBulletPower;
-            Destroy(col.gameObject);*/
+            
         }
 
 
@@ -304,6 +297,7 @@ public class CollisionChekerPlayer : MonoBehaviour {
     }
 
 
+    //Resets game object to their original color after they've been hit
     void ResetColor()
     {
         gameObject.GetComponent<SpriteRenderer>().color = originalColor;

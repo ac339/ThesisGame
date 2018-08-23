@@ -8,19 +8,23 @@ using TMPro;
 using System.Linq;
 using System;
 using SimpleJSON;
-
+/*
+ *  Script that handles actions in the Highscore menu screen/scene
+ * 
+ * 
+ * */
 
 public class HighscoreMenu : MonoBehaviour {
 
-    //public TextMeshProUGUI highscoreText;
+    
     public TextMeshProUGUI playerNameText;
     public TextMeshProUGUI playerScoreText;
     public TextMeshProUGUI playerSeedText;
     private string initial;
     private List<string> HighScoreMenuScores;
-    private List<Scoreboard> Scoreboards = new List<Scoreboard>();
+    private List<Scores> Scoreboards = new List<Scores>();
     public InputField seedInputField;
-    private List<Scoreboard> SortedList;
+    private List<Scores> SortedList;
     // Use this for initialization
     void Awake()
     {
@@ -51,6 +55,8 @@ public class HighscoreMenu : MonoBehaviour {
         StartCoroutine(Processjson());
     }
 
+    //sorts highscores using seed
+
     public void SortButton() {
 
         StopAllCoroutines();
@@ -64,15 +70,15 @@ public class HighscoreMenu : MonoBehaviour {
                 playerNameText.text = "";
                 playerScoreText.text = "";
                 playerSeedText.text = "";
-                playerNameText.text = "Player" + '\n';
-                playerScoreText.text = "Score" + '\n';
-                playerSeedText.text = "Seed" + '\n';
+                playerNameText.text = "Player Name:" + '\n';
+                playerScoreText.text = "Score:" + '\n';
+                playerSeedText.text = "Seed:" + '\n';
             }
-            if (SortedList[s].Seed.Equals(int.Parse(seedInputField.text)))
+            if (SortedList[s].seed.Equals(int.Parse(seedInputField.text)))
             {
-                playerNameText.text += SortedList[s].Name.ToString() + '\n';
-                playerScoreText.text += SortedList[s].Score.ToString() + '\n';
-                playerSeedText.text += SortedList[s].Seed.ToString() + '\n';
+                playerNameText.text += SortedList[s].name.ToString() + '\n';
+                playerScoreText.text += SortedList[s].score.ToString() + '\n';
+                playerSeedText.text += SortedList[s].seed.ToString() + '\n';
                 countingtop9++;
             }
 
@@ -95,7 +101,7 @@ public class HighscoreMenu : MonoBehaviour {
 
     }
 
-
+    //retrieves top 9 scores sorted by score and then seed 
     public IEnumerator Processjson()
     {
         Scoreboards.Clear();
@@ -110,15 +116,8 @@ public class HighscoreMenu : MonoBehaviour {
         }
         json = text.text;
         var N = SimpleJSON.JSON.Parse(json);
-        int length = 9;
-        if (N.Count > length)
-        {
-            length = N.Count;
-        }
-        else
-        {
-            length = 9;
-        }
+        int length = N.Count;
+         
         String[] names = new String[length];
         int[] scores = new int[length];
         int[] seeds = new int[length];
@@ -132,20 +131,29 @@ public class HighscoreMenu : MonoBehaviour {
         
         for(int j=0; j < names.Length; j++)
         {
-            Scoreboard s = new Scoreboard(names[j], scores[j],seeds[j]);
+            Scores s = new Scores(names[j], scores[j],seeds[j]);
             Scoreboards.Add(s);
         }
         //sort list by Score and Seed
-        SortedList = Scoreboards.OrderByDescending(s => s.Score).ThenByDescending(e => e.Seed).ToList();
+        SortedList = Scoreboards.OrderByDescending(s => s.score).ThenByDescending(e => e.seed).ToList();
         //present top 9 from sorted list
-        playerNameText.text += "Player" + '\n';
-        playerScoreText.text += "Score" + '\n';
-        playerSeedText.text += "Seed" + '\n';
-        for (int s = 0; s < 9; s++)
+        playerNameText.text += "Player Name:" + '\n';
+        playerScoreText.text += "Score:" + '\n';
+        playerSeedText.text += "Seed:" + '\n';
+        int topScores = 0;
+        if (SortedList.Count < 9)
         {
-            playerNameText.text += SortedList[s].Name.ToString() + '\n';
-            playerScoreText.text += SortedList[s].Score.ToString() + '\n';
-            playerSeedText.text += SortedList[s].Seed.ToString() + '\n';
+            topScores = SortedList.Count;
+        }
+        else
+        {
+            topScores = 9;
+        }
+        for (int s = 0; s < topScores; s++)
+        {
+            playerNameText.text += SortedList[s].name.ToString() + '\n';
+            playerScoreText.text += SortedList[s].score.ToString() + '\n';
+            playerSeedText.text += SortedList[s].seed.ToString() + '\n';
         }
         yield break;
 

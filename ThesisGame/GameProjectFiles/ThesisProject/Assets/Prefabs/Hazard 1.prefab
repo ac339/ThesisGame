@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4640691754928638}
   - component: {fileID: 212086377738643026}
   - component: {fileID: 50253706095563646}
-  - component: {fileID: 70757232027266600}
+  - component: {fileID: 60539101305876420}
   - component: {fileID: 114551094060067280}
   - component: {fileID: 114684935253161640}
   - component: {fileID: 114626555311738284}
-  - component: {fileID: 114121670818284196}
+  - component: {fileID: 114972626668896318}
   m_Layer: 15
   m_Name: Hazard 1
   m_TagString: Enemy
@@ -66,8 +66,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!70 &70757232027266600
-CapsuleCollider2D:
+--- !u!60 &60539101305876420
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -79,19 +79,35 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.96, y: 1.24}
-  m_Direction: 0
---- !u!114 &114121670818284196
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1017582631808338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b6524bfa6133844a7186f1167bb44b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.35, y: 1.35}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.45499998, y: -0.145}
+      - {x: 0.48499998, y: 0.125}
+      - {x: 0.48499998, y: 0.235}
+      - {x: 0.345, y: 0.465}
+      - {x: 0.185, y: 0.585}
+      - {x: 0.145, y: 0.60499996}
+      - {x: -0.065, y: 0.60499996}
+      - {x: -0.175, y: 0.59499997}
+      - {x: -0.305, y: 0.49499997}
+      - {x: -0.42499998, y: 0.315}
+      - {x: -0.42499998, y: -0.225}
+      - {x: -0.295, y: -0.435}
+      - {x: -0.125, y: -0.585}
+      - {x: -0.044999998, y: -0.625}
+      - {x: 0.105, y: -0.625}
+      - {x: 0.195, y: -0.585}
+      - {x: 0.285, y: -0.475}
+      - {x: 0.405, y: -0.275}
 --- !u!114 &114551094060067280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,9 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df9be5781bc6934f8b2ec86be9b02da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 10
-  hazardHealth: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 10
+  HazardHealth: 0
 --- !u!114 &114626555311738284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,9 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedf7d0628f6184c9c70f6761b58f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1.43
-  rigidbody: {fileID: 50253706095563646}
-  random: 1
+  Speed: -1.7
+  Rigidbody: {fileID: 50253706095563646}
+  IsRandom: 0
 --- !u!114 &114684935253161640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,8 +147,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f669eee44fd864983fcbf3b173ab1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 170
-  random: 1
+  Speed: 170
+  IsRandom: 1
+--- !u!114 &114972626668896318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017582631808338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5c7b925d7e11149b3327bbd0aef45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212086377738643026
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,62 +7,42 @@ using System.IO;
 using System.Text;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+/**
+ * 
+ * The game controller is responsible for initializing values for procedurally generated content and seed-dependent content based on the input received as a Seed by the user. The game controller is also repsonsible for
+ * procedurally creating game content, updating the score and creating new game plus iterations of the game.
+ * */
 
 public class GameController : MonoBehaviour
 {
-
-    public List<GameObject> prefablist;
-    private List<GameObject> enemiesList;
+    //PowerUps
+    public GameObject HealthRecoveryPowerup;
+    public GameObject HealthIncreasePowerUp;
+    public GameObject BulletSpeedPowerUp;
+    public GameObject BulletDamagePowerUp;
     public List<GameObject> hazards;
-    private bool allEnemiesDead;
     public GameObject EpicPowerUp;
-    public GameObject hazard;
-    public GameObject powerUp;
-    public GameObject enemy;
-    public GameObject powerUpSpeed;
-    public GameObject powerUpBulletPower;
-    public GameObject powerUpHealthBar;
-    public GameObject wormHole;
+    public GameObject Enemy;
+    public GameObject WormHole;
+    public GameObject WarningObj;
     public GameObject Type1EnemyWave;
     public GameObject Type2EnemyWave;
     public GameObject Type3EnemyWave;
     //public GameObject powerUp;
-    public Vector3 spawnValues;
-    public Vector3 spawnValuesPU;
-    public int hazardCount;
-    public int powerUpCount;
-    public int enemyCount;
-    public int wormHoleCount;
-    public float spawnWait;
-    public float startWait;
-    public float waveWait;
-    public float powerUpSpawnWait;
-    public float powerUpStartWait;
-    public float powerUpWaveWait;
-    public float wormHoleWaveWait;
-    public Text scoreText;
-    public Text seedText;
+    public Vector3 SpawnValues;
+    public Vector3 SpawnValuesPU;
+    public int HazardCount;
+    public int PowerUpCount;
+    public int EnemyCount;
+    public int WormHoleCount;
+    public Text ScoreText;
+    public Text SeedText;
     private int score;
-    public int numberOfEnemies;
-    public float enemyWaveWait;
-    private int deadcounter;
-
-    //enemy movement
-    public int radius;
-    private Transform enemyWaypoint1;
-
-
-
-
-
     // Gameover conditions
     public bool isGameOver = false; //flag to see if game is over
     public Slider healthBarSlider;
-    //Seed Tracking components
-    private TileController tileController;
-    private GameObject gameTileController;
-   
-    //Seed Components
+    //Seed Generated components   
+    //Seed Game Object Components
     private int numberofType1Enemies;
     private int numberofHazards;
     private int numberfType1EnemyWaves;
@@ -76,9 +56,8 @@ public class GameController : MonoBehaviour
     private int fourthSpawnTime;
     private int fifthSpawnTime;
     private int sixthSpawnTime;
-    private int eighthSawnTime;
-    private int CR_Running;
-    public float newGamePlusMultiplier=1f;
+    private int eighthSpawnTime;
+    public float newGamePlusMultiplier;
     public System.Random myRandom;
     //colours
     public int EnemyShipRed;
@@ -96,170 +75,215 @@ public class GameController : MonoBehaviour
     public int BackgroundRed;
     public int BackgroundGreen;
     public int BackgroundBlue;
-    //turrets
-    public float turretrange;
-    public float turretbulletImpulse;
-    public float turrethealthPoints;
-    public int turretscore;
-    public int turretBulletPower;
+    //turret variables
+    public float TurretRange;
+    public float TurretBulletImpulse;
+    public float TurretHealthPoints;
+    public int TurretScore;
+    public int TurretBulletPower;
+    //wormhole
+    public float WormholeScore;
 
     //enemy stats
-    public float enemyShipHealth;
-    public float enemyShipBulletPower;
-    public int enemyShipScoreValue;
-    public float enemyShipTwoHealth;
-    public float enemyShipTwoBulletPower;
-    public int enemyShipTwoScoreValue;
-    public float enemyShipThreeHealth;
-    public float enemyShipThreeBulletPower;
-    public int enemyShipThreeScoreValue;
+    public float EnemyShipHealth;
+    public float EnemyShipBulletPower;
+    public int EnemyShipScoreValue;
+    public float EnemyShipTwoHealth;
+    public float EnemyShipTwoBulletPower;
+    public int EnemyShipTwoScoreValue;
+    public float EnemyShipThreeHealth;
+    public float EnemyShipThreeBulletPower;
+    public int EnemyShipThreeScoreValue;
     //tiles
-    public int tileDamage;
+    public int TileDamage;
     //boss 
-    public int bossTouchDamage;
-    public int bossBulletDamage;
-    public float bossHealth;
-    public int bossScore;
-    public float bossRange;
-    public float bossBulletImpulse;
+    public int BossTouchDamage;
+    public int BossBulletDamage;
+    public float BossHealth;
+    public int BossScore;
+    public float BossRange;
+    public float BossBulletImpulse;
     //hazard
-    public int hazardHealth;
-    public int hazardScore;
+    public int HazardHealth;
+    public int HazardScore;
     //powerups
-    public int powerupSpeedInt;
-    public int powerUpBulletStrength;
-    public int powerUpHealthRegen;
-    public int powerUpExpandHealthBar;
+    public int PowerupSpeedInt;
+    public int PowerUpBulletStrength;
+    public int PowerUpHealthRegen;
+    public int PowerUpExpandHealthBar;
     //enemies get harder the more they die - use these to multiply enemy health/bullet impulse//bullet power
-    public float enemyType1Difficulty;
-    public float enemyType2Difficulty;
-    public float enemyType3Difficulty;
-    public float enemyType1Speed;
-    public float enemyType2Speed;
+    public float EnemyType1Difficulty;
+    public float EnemyType2Difficulty;
+    public float EnemyType3Difficulty;
+    public float EnemyType1Speed;
+    public float EnemyType2Speed;
+
+    //Tile Controller
+    public List<GameObject> TileList;
+    public List<GameObject> BackgroundMothership;
+    public GameObject TopTurret;
+    public GameObject BottomTurret;
+    public GameObject Boss;
+    public float BossWait;
+    public float InitialWaitAfterBGSpaceship;
+    public float BackgroundSpaceshipInbetweenWait;
+    private bool BGSpaceshipHasAppeared;
+    private int appearance;
+    //seed compononents
+    private int numberofSpaceshipTiles;
+    private int numberofSpaceshipFlythroughs;
+    private int seventhSpawnTime;
+    private int ninthSpawnTime;
+    //tracking defeated enemies
+    public int EnemiesDefeatedCounter;
+    public int AsteroidsDestroyedCounter;
+    public int WormholesDestroyedCounter;
+    public bool BossDefeated;
+    //coroutines that control how and when game objects are spawned
+    public IEnumerator Haz  ;
+    public IEnumerator PowUp  ;
+    public IEnumerator Worm  ;
+    public IEnumerator E1  ;
+    public IEnumerator E1W  ;
+    public IEnumerator E2W ;
+    public IEnumerator E3W  ;
+    public IEnumerator BossW  ;
 
 
-   
+
+    //Initialization
     void Start()
     {
-
-
-        gameTileController = GameObject.FindGameObjectWithTag("Tiles");
-        tileController = gameTileController.GetComponent<TileController>();
-        CR_Running = 1;
+        newGamePlusMultiplier = 1;
+        EnemiesDefeatedCounter = 1;
+        AsteroidsDestroyedCounter = 1;
+        WormholesDestroyedCounter = 1;
+        BossDefeated = false;
         //Setting Seeds
         myRandom = new System.Random(PlayerPrefs.GetInt("Seed"));
         numberofType1Enemies = myRandom.Next(6,9);
         numberofHazards = myRandom.Next(30,50);
-        numberfType1EnemyWaves = myRandom.Next(3,9);
+        numberfType1EnemyWaves = myRandom.Next(2,4);
         numberofPowerUps = myRandom.Next(20,30);
         numberofType2EnemyWaves = myRandom.Next(3,7);
-        numberofWormholes = myRandom.Next(1,20);
+        numberofWormholes = myRandom.Next(1,30);
         numberofEnemyType3Waves = myRandom.Next(2,6);
-        firstSpawnTime= myRandom.Next(2,5);
-        secondSpawnTime= myRandom.Next(1,3);
-        thirdSpawnTime= myRandom.Next(7,12);
+        firstSpawnTime= myRandom.Next(3,5);
+        secondSpawnTime= myRandom.Next(1,2);
+        thirdSpawnTime= myRandom.Next(5,7);
         fourthSpawnTime = myRandom.Next(3,8);
         fifthSpawnTime = myRandom.Next(4,9);
         sixthSpawnTime = myRandom.Next(3,7);
-        eighthSawnTime = myRandom.Next(4,7);
+        eighthSpawnTime = myRandom.Next(4,7);
         //Present Seed
-        seedText.text = "Seed : " + PlayerPrefs.GetInt("Seed");
-        allEnemiesDead = false;
-        deadcounter = 0;
+        SeedText.text = "Seed : " + PlayerPrefs.GetInt("Seed");
+        //Tile Controller
+        //Seed components
+        numberofSpaceshipTiles = myRandom.Next(50, 100);
+        numberofSpaceshipFlythroughs = 1;
+        seventhSpawnTime = myRandom.Next(10, 15);
+        ninthSpawnTime = myRandom.Next(10, 17);
+        //End
+        BGSpaceshipHasAppeared = false;
         //colours
         EnemyShipRed = 255;
         EnemyShipGreen=myRandom.Next(1, 255);
         EnemyShipBlue = myRandom.Next(1, 255);
-        EnemyShipTwoRed = myRandom.Next(110, 255);
-        EnemyShipTwoGreen = 66;
-        EnemyShipTwoBlue = myRandom.Next(200, 255);
+        EnemyShipTwoRed = myRandom.Next(0, 233);
+        EnemyShipTwoGreen =60;  
+        EnemyShipTwoBlue = myRandom.Next(69, 233);
         EnemyShipThreeRed = myRandom.Next(45, 255);
         EnemyShipThreeGreen = 255;
-        EnemyShipThreeBlue = 0;
+        EnemyShipThreeBlue = myRandom.Next(0, 155);
         BossRed = 255;
         BossGreen = myRandom.Next(0, 255);
         BossBlue = myRandom.Next(0, 255);
-        BackgroundRed = myRandom.Next(74,214);
-        BackgroundGreen= myRandom.Next(41, 177);
-        BackgroundBlue =myRandom.Next(84, 177);
+        BackgroundRed = myRandom.Next(65,214);
+        BackgroundGreen= myRandom.Next(35, 177);
+        BackgroundBlue =myRandom.Next(75, 177);
         //hazards
-        hazardHealth = myRandom.Next(4, 11) *(int) newGamePlusMultiplier;
-        hazardScore = myRandom.Next(5, 15) * (int)newGamePlusMultiplier;
-        
+        HazardHealth = myRandom.Next(4, 8) *(int) newGamePlusMultiplier;
+        HazardScore = myRandom.Next(5, 15) * (int)newGamePlusMultiplier;
+        //wormhole
+        WormholeScore = myRandom.Next(100, 150) * (int)newGamePlusMultiplier;
+
         //turrets
-        turrethealthPoints =myRandom.Next(15, 25) *newGamePlusMultiplier;
-        turretrange = myRandom.Next(2, 4);
-        turretbulletImpulse = myRandom.Next(13, 18);
-        turretscore = myRandom.Next(20, 40) * (int)newGamePlusMultiplier;
-        turretBulletPower = myRandom.Next(3, 8) * (int)newGamePlusMultiplier;
+        TurretHealthPoints =myRandom.Next(10,15) *newGamePlusMultiplier;
+        TurretRange = myRandom.Next(3, 4);
+        TurretBulletImpulse = myRandom.Next(9, 14);
+        TurretScore = myRandom.Next(20, 40) * (int)newGamePlusMultiplier;
+        TurretBulletPower = myRandom.Next(4, 7) * (int)newGamePlusMultiplier;
         //enemyships
-        enemyShipHealth = myRandom.Next(3,5) * newGamePlusMultiplier;
-        enemyShipBulletPower = myRandom.Next(1, 3) * newGamePlusMultiplier;
-        enemyShipScoreValue =myRandom.Next(30, 45) * (int)newGamePlusMultiplier;
-        enemyShipTwoHealth = myRandom.Next(5, 12) *newGamePlusMultiplier;
-        enemyShipTwoBulletPower = myRandom.Next(2, 6) * newGamePlusMultiplier;
-        enemyShipTwoScoreValue =myRandom.Next(10, 20) * (int)newGamePlusMultiplier;
-        enemyShipThreeHealth =myRandom.Next(10, 17) *newGamePlusMultiplier;
-        enemyShipThreeBulletPower = myRandom.Next(4,8) * newGamePlusMultiplier;
-        enemyShipThreeScoreValue = myRandom.Next(45, 60) * (int)newGamePlusMultiplier;
+        EnemyShipHealth = myRandom.Next(2,4) * newGamePlusMultiplier;
+        EnemyShipBulletPower = myRandom.Next(1, 3) * newGamePlusMultiplier;
+        EnemyShipScoreValue =myRandom.Next(30, 45) * (int)newGamePlusMultiplier;
+        EnemyShipTwoHealth = myRandom.Next(3,5) *newGamePlusMultiplier;
+        EnemyShipTwoBulletPower = myRandom.Next(2, 3) * newGamePlusMultiplier;
+        EnemyShipTwoScoreValue =myRandom.Next(20, 25) * (int)newGamePlusMultiplier;
+        EnemyShipThreeHealth =myRandom.Next(6, 8) *newGamePlusMultiplier;
+        EnemyShipThreeBulletPower = myRandom.Next(2,4) * newGamePlusMultiplier;
+        EnemyShipThreeScoreValue = myRandom.Next(45, 60) * (int)newGamePlusMultiplier;
         //tiles
-        tileDamage = myRandom.Next(5, 10) * (int)newGamePlusMultiplier;
+        TileDamage = myRandom.Next(5, 10) * (int)newGamePlusMultiplier;
         //boss
-        bossHealth = myRandom.Next(200,300) * newGamePlusMultiplier;
-        bossScore= myRandom.Next(10000,20000) * (int)newGamePlusMultiplier;
-        bossTouchDamage = myRandom.Next(10, 20) * (int)newGamePlusMultiplier;
-        bossBulletDamage = myRandom.Next(20, 40) * (int)newGamePlusMultiplier;
-        bossRange = myRandom.Next(3, 10);
-        bossBulletImpulse = myRandom.Next(12, 18);
+        BossHealth = myRandom.Next(180,240) * newGamePlusMultiplier;
+        BossScore= myRandom.Next(10000,20000) * (int)newGamePlusMultiplier;
+        BossTouchDamage = myRandom.Next(5, 10) * (int)newGamePlusMultiplier;
+        BossBulletDamage = myRandom.Next(5, 7) * (int)newGamePlusMultiplier;
+        BossRange = myRandom.Next(4,10);
+        BossBulletImpulse = myRandom.Next(8,12);
         //powerups
-        powerupSpeedInt = myRandom.Next(100, 200);
-        powerUpBulletStrength = myRandom.Next(1, 2);
-        powerUpHealthRegen = myRandom.Next(10,15);
-        powerUpExpandHealthBar = myRandom.Next(5, 10);
-        enemyType1Difficulty=1;
-        enemyType2Difficulty=1;
-        enemyType3Difficulty=1;
-        enemyType1Speed = myRandom.Next(11, 12);
-        enemyType2Speed = -0.34f;
+        PowerupSpeedInt = myRandom.Next(100, 200);
+        PowerUpBulletStrength = myRandom.Next(1, 2);
+        PowerUpHealthRegen = myRandom.Next(10,15);
+        PowerUpExpandHealthBar = myRandom.Next(5, 10);
+        EnemyType1Difficulty=1;
+        EnemyType2Difficulty=1;
+        EnemyType3Difficulty=1;
+        EnemyType1Speed =11;
+        EnemyType2Speed = -0.34f;
         //Start Waves
         score = 0;
         UpdateScore();
+     
+        //This is the coroutine that gets called to start the game 
         StartCoroutine(Spawn());
-        StartCoroutine(SpawnHazards());
-        StartCoroutine(SpawnPowerUpWaves());
-        StartCoroutine(SpawnWormholes());
-
-
+     
 
 
 
     }
 
+    //This coroutine initializes and starts all other coroutines
 IEnumerator Spawn()
     {
         while (true)
         {
-            yield return StartCoroutine(SpawnEnemyType1());
-            yield return StartCoroutine(SpawnEnemyType1Wave());
-            yield return StartCoroutine(SpawnEnemyType2Wave());
-            yield return StartCoroutine(SpawnEnemyType3Wave());
-            StopCoroutine(SpawnWormholes());
-            StopCoroutine(SpawnHazards());
-            StopCoroutine(SpawnPowerUpWaves());
-            yield return StartCoroutine(tileController.SpawnBackgroundSpaceShip());
-            newGamePlusMultiplier += myRandom.Next(2,5);
-            StartCoroutine(SpawnHazards());
-            StartCoroutine(SpawnPowerUpWaves());
-            StartCoroutine(SpawnWormholes());
+            Haz = SpawnHazards();
+            PowUp = SpawnPowerUpWaves();
+            Worm = SpawnWormholes();
+            E1 = SpawnEnemyType1();
+            E1W = SpawnEnemyType1Wave();
+            E2W = SpawnEnemyType2Wave();
+            E3W = SpawnEnemyType3Wave();
+            BossW = SpawnBackgroundSpaceShip();
+            StartCoroutine(Haz);
+            StartCoroutine(PowUp);
+            StartCoroutine(Worm);
+            yield return StartCoroutine(E1);
+             yield return StartCoroutine(E1W);
+             yield return StartCoroutine(E2W);
+             yield return StartCoroutine(E3W);
+            StopCoroutine(Haz);
+            StopCoroutine(PowUp);
+            StopCoroutine(Worm);
+            yield return StartCoroutine(BossW);
+            newGamePlusMultiplier +=(myRandom.Next(2,5)/10);
 
         }
     }
 
-    private IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(5f);
-    }
-
+  //delays the game from loading the Game Over screen
     private IEnumerator DelayLoadLevel()
     {
       
@@ -269,6 +293,8 @@ IEnumerator Spawn()
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("GameOver");  
     }
+
+    //players health is checked at every game update to ensure the game isnt over
     void Update()
     {
 
@@ -277,33 +303,20 @@ IEnumerator Spawn()
         {
             isGameOver = true;
             StartCoroutine(DelayLoadLevel());
-            // yield return new WaitForSeconds(2);
+           
 
         }
         
-      //  Debug.Log("CR running is:" + CR_Running);
-   
+ 
+       //Pressing "Esc" key allows you to go into the Seed menu
         if (Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene("Seed");
         }
     }
 
-
-    void AddEnemies()
-    {
-        
-        enemiesList = new List<GameObject>();
-        int y = -2;
-        for (int e=0; e< numberOfEnemies; e++)
-        {
-            enemiesList.Add(Instantiate(Resources.Load("Enemy"), new Vector3(2, y, -4), enemy.transform.rotation) as GameObject);
-            y += 2;
-        }
-    }
-
-
-
+    //This coroutine is responsible for spawning enemy type A enemies in small waves of three. After each wave of enemy is spawned, the next wave is a bit more difficult in terms of 
+    //bullet strength and overall health points
     IEnumerator SpawnEnemyType1()
     {
      
@@ -311,12 +324,12 @@ IEnumerator Spawn()
             for (int l = 0; l < numberofType1Enemies; l+=3)
             {
             yield return new WaitForSeconds(firstSpawnTime);
-            GameObject enemya = (GameObject)Instantiate(enemy, new Vector3(5, 2, -3), enemy.transform.rotation);
-                GameObject enemyb = (GameObject)Instantiate(enemy, new Vector3(5, 0, -3), enemy.transform.rotation);
-                GameObject enemyc = (GameObject)Instantiate(enemy, new Vector3(5, -2, -3), enemy.transform.rotation);
-            enemyType1Difficulty += 0.1f;
-            enemyShipHealth = enemyShipHealth * enemyType1Difficulty;
-            enemyShipBulletPower = enemyShipBulletPower * enemyType1Difficulty;
+                GameObject enemya = (GameObject)Instantiate(Enemy, new Vector3(5, 2, -3), Enemy.transform.rotation);
+                GameObject enemyb = (GameObject)Instantiate(Enemy, new Vector3(5, 0, -3), Enemy.transform.rotation);
+                GameObject enemyc = (GameObject)Instantiate(Enemy, new Vector3(5, -2, -3), Enemy.transform.rotation);
+            EnemyType1Difficulty += 0.05f;
+            EnemyShipHealth = EnemyShipHealth * EnemyType1Difficulty;
+            EnemyShipBulletPower = EnemyShipBulletPower * EnemyType1Difficulty;
             yield return new WaitForSeconds(firstSpawnTime);
 
             }
@@ -325,6 +338,7 @@ IEnumerator Spawn()
 
     }
 
+    //This coroutine is repsonsible for spawning asteroids from a list made up of asteroid game objects that differ in aesthetics
     IEnumerator SpawnHazards()
     {
         
@@ -333,37 +347,41 @@ IEnumerator Spawn()
             for (int i = 0; i < numberofHazards; i++)
             {
                yield return new WaitForSeconds(secondSpawnTime);
-                Vector3 spawnPosition = new Vector3(spawnValues.x, UnityEngine.Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
+                Vector3 spawnPosition = new Vector3(SpawnValues.x, UnityEngine.Random.Range(-SpawnValues.y, SpawnValues.y), SpawnValues.z);
                 Quaternion spawnRotation = Quaternion.identity;
                 float scale = UnityEngine.Random.Range((float)0.3, (float)0.6);
                 int hazardIndex = UnityEngine.Random.Range(0, hazards.Count - 1);
                 hazards[hazardIndex].transform.localScale += new Vector3(scale, scale, 0);
                 Instantiate(hazards[hazardIndex], spawnPosition, spawnRotation);
                 hazards[hazardIndex].transform.localScale = new Vector3((float)0.2, (float)0.2, 0);
+          
                 yield return new WaitForSeconds(secondSpawnTime);
             }
             yield return new WaitForSeconds(secondSpawnTime);
         }
     }
 
+    //This coroutine is responsible for spawning enemy type A enemies in larger waves. After each wave of enemy is spawned, the next wave is a bit more difficult in terms of 
+    //bullet strength and overall health points
     IEnumerator SpawnEnemyType1Wave()
     {
     
             for (int s = 0; s< numberfType1EnemyWaves; s++)
             {
-            yield return new WaitForSeconds(2);
-            GameObject enemyType1Wave = (GameObject)Instantiate(Type1EnemyWave, new Vector3(4,0, -3), Type1EnemyWave.transform.rotation);
-            enemyType1Difficulty += 0.05f;
-            enemyShipHealth = enemyShipHealth * enemyType1Difficulty;
-            enemyShipBulletPower = enemyShipBulletPower * enemyType1Difficulty;
-            enemyType1Speed += 0.9f;
             yield return new WaitForSeconds(thirdSpawnTime);
+            GameObject enemyType1Wave = (GameObject)Instantiate(Type1EnemyWave, new Vector3(4,0, -3), Type1EnemyWave.transform.rotation);
+            EnemyType1Difficulty += 0.05f;
+            EnemyShipHealth = EnemyShipHealth * EnemyType1Difficulty;
+            EnemyShipBulletPower = EnemyShipBulletPower * EnemyType1Difficulty;
+            EnemyType1Speed += 0.4f;
             }
             yield return new WaitForSeconds(thirdSpawnTime);
  
 
     }
 
+
+    //this coroutine is repsonible for spawning power-ups. Each power-up is spawned depending on criteria that the user needs to fulfill
     IEnumerator SpawnPowerUpWaves()
     {
         
@@ -371,20 +389,50 @@ IEnumerator Spawn()
         {
             for (int p = 0; p < numberofPowerUps; p++)
             {
-                Vector3 spawnPositionPowerUp = new Vector3(spawnValuesPU.x, UnityEngine.Random.Range(-spawnValuesPU.y, spawnValuesPU.y), spawnValuesPU.z);
+                Vector3 spawnPositionPowerUp = new Vector3(SpawnValuesPU.x, UnityEngine.Random.Range(-SpawnValuesPU.y, SpawnValuesPU.y), SpawnValuesPU.z);
                 Quaternion spawnRotationPU = Quaternion.identity;
-                int prefabIndex = UnityEngine.Random.Range(0, prefablist.Count - 1);
-                Instantiate(prefablist[prefabIndex], spawnPositionPowerUp, spawnRotationPU);
-                if(p % myRandom.Next(10, 20) == 0)
+                //bullet damage  power up spawn conditions
+                if ((EnemiesDefeatedCounter) % ( myRandom.Next(5,11) * Math.Abs(newGamePlusMultiplier)) == 0)
                 {
-                    Instantiate(EpicPowerUp, spawnPositionPowerUp + new Vector3(-5, UnityEngine.Random.Range(-spawnValuesPU.y, spawnValuesPU.y), 0), spawnRotationPU);
+                    Instantiate(BulletDamagePowerUp, spawnPositionPowerUp-new Vector3(5,-0.2f,0), spawnRotationPU);
+                    EnemiesDefeatedCounter++;
                 }
+                //bullet speed power up spawn conditions
+                if ((AsteroidsDestroyedCounter) % (myRandom.Next(5,11) * Math.Abs(newGamePlusMultiplier)) == 0)
+                {
+                    Instantiate(BulletSpeedPowerUp, spawnPositionPowerUp - new Vector3(8, 0.1f, 0), spawnRotationPU);
+                    EnemiesDefeatedCounter++;
+                    AsteroidsDestroyedCounter++;
+                }
+                //health increase power up spawn conditions
+                if (WormholesDestroyedCounter % (myRandom.Next(4, 6) * Math.Abs(newGamePlusMultiplier)) == 0)
+                {
+                    Instantiate(HealthIncreasePowerUp, spawnPositionPowerUp - new Vector3(4,0.3f, 0), spawnRotationPU);
+                    WormholesDestroyedCounter++;
+                }
+                //health recovery power up spawn conditions
+                if (EnemiesDefeatedCounter % (myRandom.Next(5, 8) * Math.Abs(newGamePlusMultiplier)) == 0)
+                {
+                    Instantiate(HealthRecoveryPowerup, spawnPositionPowerUp - new Vector3(7, -0.4f, 0), spawnRotationPU);
+                    EnemiesDefeatedCounter++;
+                }
+                //Epic power up spawn conditions
+                if ((EnemiesDefeatedCounter + WormholesDestroyedCounter + AsteroidsDestroyedCounter) % (myRandom.Next(15, 25) * Math.Abs(newGamePlusMultiplier)) == 0)
+                {
+                    Instantiate(EpicPowerUp, spawnPositionPowerUp + new Vector3(-5, UnityEngine.Random.Range(-SpawnValuesPU.y, SpawnValuesPU.y), 0), spawnRotationPU);
+                    EnemiesDefeatedCounter++;
+                    WormholesDestroyedCounter++;
+                    AsteroidsDestroyedCounter++;
+                }
+         
                 yield return new WaitForSeconds(fourthSpawnTime);
             }
             yield return new WaitForSeconds(fourthSpawnTime);
         } 
     }
 
+    //This coroutine is responsible for spawning enemy type B enemies in waves. After each wave of enemy is spawned, the next wave is a bit more difficult in terms of 
+    //bullet strength and overall health points
     IEnumerator SpawnEnemyType2Wave()
     {
 
@@ -394,10 +442,11 @@ IEnumerator Spawn()
             {
             yield return new WaitForSeconds(2);
             GameObject enemyType2Wave = (GameObject)Instantiate(Type2EnemyWave, new Vector3(5, UnityEngine.Random.Range(1, -1),-3), Type2EnemyWave.transform.rotation);
-            enemyType2Difficulty += 0.1f;
-            enemyShipTwoHealth = enemyShipHealth * enemyType2Difficulty;
-            enemyShipTwoBulletPower = enemyShipTwoBulletPower * enemyType2Difficulty;
-            enemyType2Speed -= 0.15f;
+            EnemyType2Difficulty += 0.01f;
+            EnemyShipTwoHealth = EnemyShipHealth * EnemyType2Difficulty;
+            EnemyShipTwoBulletPower = EnemyShipTwoBulletPower * EnemyType2Difficulty;
+            //increase speed
+            EnemyType2Speed -= 0.10f;
             yield return new WaitForSeconds(fifthSpawnTime);
             }
             yield return new WaitForSeconds(fifthSpawnTime);
@@ -405,7 +454,7 @@ IEnumerator Spawn()
 
     }
 
-
+    //Coroutine responsible for spawning warnings and then wormholes randomely accross the screen.
     IEnumerator SpawnWormholes()
     {
         yield return new WaitForSeconds(sixthSpawnTime+2);
@@ -413,11 +462,14 @@ IEnumerator Spawn()
         {
             for (int w = 0; w < numberofWormholes; w++)
             {
-
-                Instantiate(wormHole, new Vector3(UnityEngine.Random.Range(-1,2.5f), UnityEngine.Random.Range(-2,2), -3), wormHole.transform.rotation);
+                Vector3 wormholeVector = new Vector3(UnityEngine.Random.Range(-1.5f, 2.5f), UnityEngine.Random.Range(-2, 2), -3);
+                Instantiate(WarningObj, wormholeVector, WarningObj.transform.rotation);
+                yield return new WaitForSeconds(WarningObj.GetComponent<DestroyByTime>().Lifetime);
+                Instantiate(WormHole, wormholeVector, WormHole.transform.rotation);
                 yield return new WaitForSeconds(sixthSpawnTime + 2);
                 Destroy(GameObject.FindWithTag("Wormhole"));
                 yield return new WaitForSeconds(sixthSpawnTime + 2);
+         
             }
             yield return new WaitForSeconds(sixthSpawnTime + 2);
         }
@@ -425,6 +477,8 @@ IEnumerator Spawn()
     }
 
 
+    //This coroutine is responsible for spawning enemy type C enemies in waves. After each wave of enemy is spawned, the next wave is a bit more difficult in terms of 
+    //bullet strength and overall health points
     IEnumerator SpawnEnemyType3Wave()
     {
         
@@ -432,25 +486,92 @@ IEnumerator Spawn()
             {
            
             GameObject enemyType3Wave = (GameObject)Instantiate(Type3EnemyWave, new Vector3(0.5f, 0, -3), Type3EnemyWave.transform.rotation);
-            enemyType3Difficulty += 0.1f;
-            enemyShipThreeHealth = enemyShipThreeHealth * enemyType3Difficulty;
-            enemyShipThreeBulletPower = enemyShipThreeBulletPower * enemyType3Difficulty;
-            yield return new WaitForSeconds(eighthSawnTime);
+            EnemyType3Difficulty += 0.05f;
+            EnemyShipThreeHealth = EnemyShipThreeHealth * EnemyType3Difficulty;
+            EnemyShipThreeBulletPower = EnemyShipThreeBulletPower * EnemyType3Difficulty;
+            yield return new WaitForSeconds(eighthSpawnTime);
             }
-            yield return new WaitForSeconds(eighthSawnTime);
-       
-       // CR_Running = 5;
+ 
 
     }
 
-
-
-
-
-        void UpdateScore()
+    public IEnumerator SpawnBackgroundSpaceShip()
     {
-        scoreText.text = "Score : " + score;
+
+ 
+
+        for (int l = 0; l < numberofSpaceshipFlythroughs; l++)
+        {
+            if (l > 0)
+            {
+                yield return new WaitForSeconds(BackgroundSpaceshipInbetweenWait);
+            }
+
+            Quaternion spawnRotationBackgroundSpaceship = Quaternion.identity;
+            int mothershipIndex = UnityEngine.Random.Range(0, BackgroundMothership.Count - 1);
+            Vector3 SpawnPositionBackgroundSpaceShip = new Vector3(-7, UnityEngine.Random.Range(-2, 2), BackgroundMothership[mothershipIndex].transform.position.z);
+            Instantiate(BackgroundMothership[mothershipIndex], SpawnPositionBackgroundSpaceShip, BackgroundMothership[mothershipIndex].transform.rotation);
+            yield return new WaitForSeconds(seventhSpawnTime);
+            BGSpaceshipHasAppeared = true;
+            if (BGSpaceshipHasAppeared)
+            {
+                float x = 0;
+                for (int t = 0; t < numberofSpaceshipTiles; t++)
+                {
+                    Quaternion TileRotation = Quaternion.identity;
+                    int tileListIndex = UnityEngine.Random.Range(0, TileList.Count - 1);
+                    Vector3 initialTilePositionBottomScreen = new Vector3(4 + x, (float)-2.083, TileList[tileListIndex].transform.position.z);
+                    Vector3 initialTilePositionTopScreen = new Vector3(4 + x, (float)2.083, TileList[tileListIndex].transform.position.z);
+                    float sizeOfTile = TileList[tileListIndex].GetComponent<Renderer>().bounds.size.x;
+                    x += sizeOfTile;
+                    //x = tileList[tileListIndex].GetComponent<Renderer>().bounds.size.x;
+                    Instantiate(TileList[tileListIndex], initialTilePositionBottomScreen, TileRotation);
+                    Instantiate(TileList[tileListIndex], initialTilePositionTopScreen, TileRotation);
+                    //add extra tiles for closer gap
+                    if (t % 5 == 0 || t % 6 == 0 || t % 7 == 0 || t % 8 == 0)
+                    {
+                        Instantiate(TileList[tileListIndex], initialTilePositionBottomScreen + new Vector3(0, sizeOfTile, 0), TileRotation);
+                        Instantiate(TileList[tileListIndex], initialTilePositionTopScreen - new Vector3(0, sizeOfTile, 0), TileRotation);
+                        if (t % 7 == 0)
+                        {
+                            Instantiate(TileList[tileListIndex], initialTilePositionBottomScreen + new Vector3(0, 2 * sizeOfTile, 0), TileRotation);
+                            Instantiate(TileList[tileListIndex], initialTilePositionTopScreen - new Vector3(0, 2 * sizeOfTile, 0), TileRotation);
+                            //add turrets
+                            if (t % 14 == 0)
+                            {
+                                Vector3 topTurretPosition = initialTilePositionTopScreen - new Vector3(0, (float)0.25, 0) - new Vector3(0, 2 * sizeOfTile, 0);
+                                Vector3 bottomTurretPosition = initialTilePositionBottomScreen + new Vector3(0, (float)0.25, 0) + new Vector3(0, 2 * sizeOfTile, 0);
+                                Instantiate(TopTurret, new Vector3(topTurretPosition.x, topTurretPosition.y, TopTurret.transform.position.z), TileRotation);
+                                Instantiate(BottomTurret, new Vector3(bottomTurretPosition.x, bottomTurretPosition.y, BottomTurret.transform.position.z), TileRotation);
+                            }
+                        }
+                    }
+                }
+                yield return new WaitForSeconds(ninthSpawnTime);
+
+            }
+            BGSpaceshipHasAppeared = false;
+            yield return new WaitForSeconds(ninthSpawnTime +20);
+            BossDefeated = false;
+            //instantiate boss once tiled stage is over
+            Instantiate(Boss, Boss.transform.position + new Vector3(10, 0, 0), Boss.transform.rotation);
+            yield return new WaitForSeconds(ninthSpawnTime);
+        }
+       // numberofSpaceshipFlythroughs += 1;
+        yield return new WaitForSeconds(ninthSpawnTime);
+
+
     }
+
+
+
+
+    //method thats get called to update the players score
+    void UpdateScore()
+    {
+        ScoreText.text = "Score : " + score;
+    }
+    //method for adding to the overall score the player has achieved
     public void AddScore(int newScoreValue)
     {
         score += newScoreValue;
@@ -458,26 +579,7 @@ IEnumerator Spawn()
 
 
     }
-
-    /// <summary>
-    /// Writes the given object instance to a binary file.
-    /// <para>Object type (and all child types) must be decorated with the [Serializable] attribute.</para>
-    /// <para>To prevent a variable from being serialized, decorate it with the [NonSerialized] attribute; cannot be applied to properties.</para>
-    /// </summary>
-    /// <typeparam name="T">The type of object being written to the XML file.</typeparam>
-    /// <param name="filePath">The file path to write the object instance to.</param>
-    /// <param name="objectToWrite">The object instance to write to the XML file.</param>
-    /// <param name="append">If false the file will be overwritten if it already exists. If true the contents will be appended to the file.</param>
-    ///  https://stackoverflow.com/questions/16352879/write-list-of-objects-to-a-file
-    public static void WriteToBinaryFile<T>(string filePath, T objectToWrite, bool append = false)
-    {
-        using (Stream stream = File.Open(filePath, append ? FileMode.Append : FileMode.Create))
-        {
-            var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-            binaryFormatter.Serialize(stream, objectToWrite);
-        }
-    }
-
+ 
 
 
    

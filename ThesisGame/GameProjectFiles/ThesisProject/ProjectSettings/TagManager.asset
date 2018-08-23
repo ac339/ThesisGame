@@ -43,7 +43,7 @@ TagManager:
   - EnemyBullet
   - PowerUp
   - Hazard
-  - Wormhole
+  - Blackhole
   - Tiles
   - Laser
   - Boss

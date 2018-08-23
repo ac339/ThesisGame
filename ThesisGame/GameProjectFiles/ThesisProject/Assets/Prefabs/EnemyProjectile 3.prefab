@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 212317802678106812}
   - component: {fileID: 50783479742636426}
   - component: {fileID: 70923677900061314}
-  - component: {fileID: 114908977599457822}
   - component: {fileID: 114124258165638638}
+  - component: {fileID: 114496711196625034}
   m_Layer: 17
   m_Name: EnemyProjectile 3
   m_TagString: TurretProj
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1140701381854852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36785555, y: 1.3993003, z: -3}
+  m_LocalPosition: {x: 2.1941173, y: -0.6226784, z: -3}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb569bd5336f4f439c5438dc7114f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114908977599457822
+--- !u!114 &114496711196625034
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1140701381854852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b6524bfa6133844a7186f1167bb44b, type: 3}
+  m_Script: {fileID: 11500000, guid: bb5c7b925d7e11149b3327bbd0aef45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212317802678106812
@@ -137,7 +137,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dad5df30b398b504989de3cc18bba164, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.30900857, g: 0.2688679, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

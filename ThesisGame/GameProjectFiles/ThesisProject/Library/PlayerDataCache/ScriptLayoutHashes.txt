@@ -8,8 +8,10 @@ Assets/Scenes/GameOver.unity
 Assets/Scenes/Highscores.unity
 Assets/Scenes/Seed.unity
 Assets/Scenes/LoadScreen.unity
+Assets/Scenes/Instructions.unity
 SceneListEnd?
-9515279c1547383024b8f7f4bbea9ec1 Assembly-CSharp.dll:.PlayerController
+359c9f62f03b50c284ac0d37c59a57ac Assembly-CSharp.dll:.PlayerController
+5b5f728344e2a781df9bf7f53b997f24 Assembly-CSharp.dll:.warning
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexZoom
 c906602d9b43cc5e075f80e1d8ae7c79 Assembly-CSharp.dll:TMPro.Examples.Benchmark01_UGUI
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -95,6 +97,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 8318f57c3755abf1122a5aa450654ff0 Assembly-CSharp.dll:.LoadScores
 e811c01b5fd1b7e5f239d5afd19e0c37 Assembly-CSharp.dll:.CollisionChekerPlayer
 2079a7900b1dbc507ca73c97a1cfde5c Assembly-CSharp.dll:.RepeatingBackground
+2c4d783368d5d4945da027170d2c47b9 Assembly-CSharp.dll:.backgroundShipColour
 765037da3d8faeee91e39d672b924c61 Assembly-CSharp.dll:.EnvMapAnimator
 daa3a2a45d75e530f959955936c27baa Assembly-CSharp.dll:.BGSpaceShipMover
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -182,6 +185,7 @@ e763036081c708b34f78f5a56f72c23d TextMeshPro-2017.3-Runtime.dll:TMPro.TMP_StyleS
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.TMP_TextSelector_A
 b900ead596b2fb1093b31cb63a678767 Assembly-CSharp.dll:TMPro.Examples.TextMeshProFloatingText
 daa3a2a45d75e530f959955936c27baa Assembly-CSharp.dll:.EnemyWaveMover
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.InstructionsMenu
 36127274be13617951857debad033999 Assembly-CSharp.dll:.TurretShooting
 dad1c1272dfe1898bb613dcb2631bcce Assembly-CSharp.dll:TMPro.Examples.Benchmark02
 20221c5739bbb3e477516fe00b3ce776 Assembly-CSharp.dll:.SeedMenu
@@ -203,7 +207,7 @@ b11448bc44f49db3e26525de9acc4a98 TextMeshPro-2017.3-Editor.dll:TMPro.EditorUtili
 05524b8f659e7bfe5756d1335fec24ba TextMeshPro-2017.3-Editor.dll:TMPro.EditorUtilities.TMPro_TextContainerEditor
 2680128d13ecaa631894472a46e5fcf1 Assembly-CSharp.dll:.CollisionCheckerHazard
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CollisionChecker
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.tilecolour
+2c4d783368d5d4945da027170d2c47b9 Assembly-CSharp.dll:.tilecolour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.TMP_DigitValidator
 5b5f728344e2a781df9bf7f53b997f24 Assembly-CSharp.dll:.PowerUpHealth
 126226fad1dacdc9d196e9cf6fcbb274 Assembly-CSharp.dll:.EnemyScript
@@ -231,6 +235,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 7564d82f6a2bfa5b9ed53c77650da71c Assembly-CSharp.dll:.ScrollingObject
+2c4d783368d5d4945da027170d2c47b9 Assembly-CSharp.dll:.turretColour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.LoadScreenDelay
 daa5581282b5f4a48d91dcd719c920fe Assembly-CSharp.dll:.BossBullet
 62229a3e4d53ca59bec192e89627ed52 Assembly-CSharp.dll:TMPro.Examples.CameraController
@@ -243,7 +248,7 @@ e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 aa9d1bd0cc771545f2ae1f63a6d0ed6a Assembly-CSharp.dll:TMPro.Examples.TMP_TextEventCheck
-ccf5db45a18f14dd506496500fd95e6d Assembly-CSharp.dll:.GameController
+e98d5a185f0297378a289a722b5f104b Assembly-CSharp.dll:.GameController
 9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -259,7 +264,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 5b5f728344e2a781df9bf7f53b997f24 Assembly-CSharp.dll:.PowerUpHealthIncrease
 1cd4893b18ef6c9e1612214d23ea08a3 Assembly-CSharp.dll:.ChatController
 67f4643e5a22b927122694982fe83497 Assembly-CSharp.dll:.GameOverMenu
-2d42e4e61464316fd5ba35a9fed83aea Assembly-CSharp.dll:.TileController
+2aa4beff22da007c249e1eb16685696b Assembly-CSharp.dll:.TileController
 5fc9dc83fbbd3e4c1fbda5e316346407 Assembly-CSharp.dll:.HighscoreMenu
 48a9dee325686d1924a2646b71c83f08 Assembly-CSharp.dll:TMPro.Examples.Benchmark01
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver

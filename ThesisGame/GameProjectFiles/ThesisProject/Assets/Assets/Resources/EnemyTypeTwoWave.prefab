@@ -499,7 +499,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1450191395867962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4466827, y: -0.103416234, z: -4}
+  m_LocalPosition: {x: 1.4466827, y: -0.103416234, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4471766450388596}
@@ -872,10 +872,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6655da58495a949a5d65d71f55a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
   isDestroyed: 0
 --- !u!114 &114067372170855038
 MonoBehaviour:
@@ -888,9 +888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 2
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 21e0da3b5f2b64e41979a82c7db629e0, type: 2}
 --- !u!114 &114079769246578428
 MonoBehaviour:
@@ -917,10 +917,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6655da58495a949a5d65d71f55a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
   isDestroyed: 0
 --- !u!114 &114102792487245352
 MonoBehaviour:
@@ -933,9 +933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 2
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 21e0da3b5f2b64e41979a82c7db629e0, type: 2}
 --- !u!114 &114132787434009280
 MonoBehaviour:
@@ -962,10 +962,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6655da58495a949a5d65d71f55a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
   isDestroyed: 0
 --- !u!114 &114161349807723944
 MonoBehaviour:
@@ -978,9 +978,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 2
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 21e0da3b5f2b64e41979a82c7db629e0, type: 2}
 --- !u!114 &114232302079600128
 MonoBehaviour:
@@ -1035,9 +1035,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 2
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 21e0da3b5f2b64e41979a82c7db629e0, type: 2}
 --- !u!114 &114326976044803058
 MonoBehaviour:
@@ -1064,10 +1064,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6655da58495a949a5d65d71f55a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
   isDestroyed: 0
 --- !u!114 &114519560977223136
 MonoBehaviour:
@@ -1080,9 +1080,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 2
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 21e0da3b5f2b64e41979a82c7db629e0, type: 2}
 --- !u!114 &114564886065166820
 MonoBehaviour:
@@ -1095,9 +1095,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 2
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 21e0da3b5f2b64e41979a82c7db629e0, type: 2}
 --- !u!114 &114593827834616838
 MonoBehaviour:
@@ -1110,9 +1110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 2
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 21e0da3b5f2b64e41979a82c7db629e0, type: 2}
 --- !u!114 &114608307414996320
 MonoBehaviour:
@@ -1139,9 +1139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 2
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 21e0da3b5f2b64e41979a82c7db629e0, type: 2}
 --- !u!114 &114721403217524930
 MonoBehaviour:
@@ -1154,10 +1154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6655da58495a949a5d65d71f55a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
   isDestroyed: 0
 --- !u!114 &114813898422968528
 MonoBehaviour:
@@ -1170,10 +1170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6655da58495a949a5d65d71f55a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
   isDestroyed: 0
 --- !u!114 &114842950240350370
 MonoBehaviour:
@@ -1186,10 +1186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6655da58495a949a5d65d71f55a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
   isDestroyed: 0
 --- !u!114 &114963421305645206
 MonoBehaviour:
@@ -1202,10 +1202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6655da58495a949a5d65d71f55a762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
   isDestroyed: 0
 --- !u!198 &198002275515995960
 ParticleSystem:
@@ -37939,11 +37939,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64c2efe9cfd3dd542b59d22c6f48016d, type: 3}
-  m_Color: {r: 0.9150943, g: 0, b: 0.7268866, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.98}
+  m_Size: {x: 1.59, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -37984,11 +37984,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64c2efe9cfd3dd542b59d22c6f48016d, type: 3}
-  m_Color: {r: 0.9150943, g: 0, b: 0.7268866, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.98}
+  m_Size: {x: 1.59, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38029,11 +38029,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64c2efe9cfd3dd542b59d22c6f48016d, type: 3}
-  m_Color: {r: 0.9150943, g: 0, b: 0.7268866, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.98}
+  m_Size: {x: 1.59, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38074,11 +38074,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64c2efe9cfd3dd542b59d22c6f48016d, type: 3}
-  m_Color: {r: 0.9150943, g: 0, b: 0.7268866, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.98}
+  m_Size: {x: 1.59, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38119,11 +38119,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64c2efe9cfd3dd542b59d22c6f48016d, type: 3}
-  m_Color: {r: 0.9150943, g: 0, b: 0.7268866, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.98}
+  m_Size: {x: 1.59, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38164,11 +38164,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64c2efe9cfd3dd542b59d22c6f48016d, type: 3}
-  m_Color: {r: 0.9150943, g: 0, b: 0.7268866, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.98}
+  m_Size: {x: 1.59, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38209,11 +38209,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64c2efe9cfd3dd542b59d22c6f48016d, type: 3}
-  m_Color: {r: 0.9150943, g: 0, b: 0.7268866, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.98}
+  m_Size: {x: 1.59, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -38254,11 +38254,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64c2efe9cfd3dd542b59d22c6f48016d, type: 3}
-  m_Color: {r: 0.9150943, g: 0, b: 0.7268866, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 1.98}
+  m_Size: {x: 1.59, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4640691754928638}
   - component: {fileID: 212086377738643026}
   - component: {fileID: 50253706095563646}
-  - component: {fileID: 60111482706489386}
+  - component: {fileID: 60370634225252280}
   - component: {fileID: 114551094060067280}
   - component: {fileID: 114684935253161640}
   - component: {fileID: 114626555311738284}
-  - component: {fileID: 114121670818284196}
+  - component: {fileID: 114443186331218460}
   m_Layer: 15
   m_Name: Hazard 3
   m_TagString: Enemy
@@ -66,7 +66,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!60 &60111482706489386
+--- !u!60 &60370634225252280
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -110,7 +110,7 @@ PolygonCollider2D:
       - {x: 0.125, y: -0.53499997}
       - {x: 0.175, y: -0.445}
       - {x: 0.315, y: -0.16499999}
---- !u!114 &114121670818284196
+--- !u!114 &114443186331218460
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1017582631808338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b6524bfa6133844a7186f1167bb44b, type: 3}
+  m_Script: {fileID: 11500000, guid: bb5c7b925d7e11149b3327bbd0aef45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114551094060067280
@@ -132,9 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df9be5781bc6934f8b2ec86be9b02da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 10
-  hazardHealth: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 10
+  HazardHealth: 0
 --- !u!114 &114626555311738284
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedf7d0628f6184c9c70f6761b58f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2.22
-  rigidbody: {fileID: 50253706095563646}
-  random: 1
+  Speed: -1.88
+  Rigidbody: {fileID: 50253706095563646}
+  IsRandom: 0
 --- !u!114 &114684935253161640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f669eee44fd864983fcbf3b173ab1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 170
-  random: 1
+  Speed: 170
+  IsRandom: 1
 --- !u!212 &212086377738643026
 SpriteRenderer:
   m_ObjectHideFlags: 1

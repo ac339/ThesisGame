@@ -1,22 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * This script is repsonsbile for adding constant random or fixed rotation to a game object
+ * */
 public class RandomRotator : MonoBehaviour {
 
-    public float speed;
-    private Rigidbody2D rigidbody2d;
-    public bool random;
-    private int fixedspeed = 1;
+    public float Speed;
+    private Rigidbody2D Rigidbody2d;
+    public bool IsRandom;
+    private int fixedSpeed = 1;
 
     void Start()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>();
-        if (random)
-            rigidbody2d.angularVelocity = Random.value * speed;
+        Rigidbody2d = GetComponent<Rigidbody2D>();
+        if (IsRandom)
+            Rigidbody2d.angularVelocity = Random.value * Speed;
         else
         {
-            rigidbody2d.angularVelocity = fixedspeed * speed;
+            Rigidbody2d.angularVelocity = fixedSpeed * Speed;
         }
     }
 }

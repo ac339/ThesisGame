@@ -21,9 +21,9 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("Seed");
     }
 
-    public void QuitGame()
+    public void Intsructions()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Instructions");
     }
     // Use this for initialization
 	void Start () {

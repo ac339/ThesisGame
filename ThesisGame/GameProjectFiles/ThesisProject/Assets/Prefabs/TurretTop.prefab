@@ -21,10 +21,11 @@ GameObject:
   - component: {fileID: 4409246092699762}
   - component: {fileID: 212528054840219026}
   - component: {fileID: 50931739045505516}
-  - component: {fileID: 61859186542095040}
+  - component: {fileID: 60684621039879844}
   - component: {fileID: 114264632934345908}
   - component: {fileID: 114205787471203322}
-  - component: {fileID: 114575749385510746}
+  - component: {fileID: 114094220875703686}
+  - component: {fileID: 114310528396451646}
   m_Layer: 17
   m_Name: TurretTop
   m_TagString: Turret
@@ -65,8 +66,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
---- !u!61 &61859186542095040
-BoxCollider2D:
+--- !u!60 &60684621039879844
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -87,9 +88,51 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.13, y: 1.84}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.024999999, y: -0.65}
+      - {x: 0.065, y: -0.84}
+      - {x: 0.085, y: -0.89}
+      - {x: 0.345, y: -0.89}
+      - {x: 0.36499998, y: -0.87}
+      - {x: 0.415, y: -0.66999996}
+      - {x: 0.415, y: -0.82}
+      - {x: 0.505, y: -0.89}
+      - {x: 0.525, y: -0.84999996}
+      - {x: 0.555, y: -0.59999996}
+      - {x: 0.555, y: 0.29}
+      - {x: 0.505, y: 0.59}
+      - {x: 0.285, y: 0.84}
+      - {x: 0.125, y: 0.89}
+      - {x: -0.145, y: 0.89}
+      - {x: -0.255, y: 0.84}
+      - {x: -0.325, y: 0.79999995}
+      - {x: -0.525, y: 0.56}
+      - {x: -0.555, y: 0.19}
+      - {x: -0.555, y: -0.61}
+      - {x: -0.525, y: -0.84999996}
+      - {x: -0.49499997, y: -0.87}
+      - {x: -0.475, y: -0.88}
+      - {x: -0.405, y: -0.78999996}
+      - {x: -0.405, y: -0.68}
+      - {x: -0.36499998, y: -0.87}
+      - {x: -0.345, y: -0.89}
+      - {x: -0.095, y: -0.89}
+      - {x: -0.074999996, y: -0.87}
+      - {x: -0.074999996, y: -0.84999996}
+      - {x: -0.024999999, y: -0.65}
+--- !u!114 &114094220875703686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779116815673474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357f38e9184ba8d45ac78ba90ba10a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 212528054840219026}
 --- !u!114 &114205787471203322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a7cf566401b404287aadfd4a538868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
-  rigidbody: {fileID: 50931739045505516}
+  Speed: -1
+  Rigidbody: {fileID: 50931739045505516}
 --- !u!114 &114264632934345908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,12 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08468e693e09694bb0d6523472dafd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  freezeRotation: 0
-  bulletPower: 0
-  projectile: {fileID: 1140701381854852, guid: fbb4908c62169c44a9038a5dbdeb9b3d, type: 2}
-  playerPos: {x: 0, y: 0, z: 0}
---- !u!114 &114575749385510746
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  FreezeRotation: 0
+  BulletPower: 0
+  Projectile: {fileID: 1140701381854852, guid: fbb4908c62169c44a9038a5dbdeb9b3d, type: 2}
+  PlayerPos: {x: 0, y: 0, z: 0}
+--- !u!114 &114310528396451646
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -127,7 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1779116815673474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b6524bfa6133844a7186f1167bb44b, type: 3}
+  m_Script: {fileID: 11500000, guid: bb5c7b925d7e11149b3327bbd0aef45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212528054840219026

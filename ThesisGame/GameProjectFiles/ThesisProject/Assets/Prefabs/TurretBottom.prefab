@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 60077593731364766}
   - component: {fileID: 114408096850877686}
   - component: {fileID: 114524567954159574}
-  - component: {fileID: 114238460366066474}
+  - component: {fileID: 114508367520899776}
+  - component: {fileID: 114298255251691414}
   m_Layer: 17
   m_Name: TurretBottom
   m_TagString: Turret
@@ -120,7 +121,7 @@ PolygonCollider2D:
       - {x: -0.074999996, y: -0.87}
       - {x: -0.074999996, y: -0.84999996}
       - {x: -0.024999999, y: -0.65}
---- !u!114 &114238460366066474
+--- !u!114 &114298255251691414
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1545154850976844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b6524bfa6133844a7186f1167bb44b, type: 3}
+  m_Script: {fileID: 11500000, guid: bb5c7b925d7e11149b3327bbd0aef45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114408096850877686
@@ -142,11 +143,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08468e693e09694bb0d6523472dafd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  freezeRotation: 0
-  bulletPower: 0
-  projectile: {fileID: 1140701381854852, guid: fbb4908c62169c44a9038a5dbdeb9b3d, type: 2}
-  playerPos: {x: 0, y: 0, z: 0}
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  FreezeRotation: 0
+  BulletPower: 0
+  Projectile: {fileID: 1140701381854852, guid: fbb4908c62169c44a9038a5dbdeb9b3d, type: 2}
+  PlayerPos: {x: 0, y: 0, z: 0}
+--- !u!114 &114508367520899776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1545154850976844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357f38e9184ba8d45ac78ba90ba10a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 212237302815820060}
 --- !u!114 &114524567954159574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a7cf566401b404287aadfd4a538868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
-  rigidbody: {fileID: 50461642429504512}
+  Speed: -1
+  Rigidbody: {fileID: 50461642429504512}
 --- !u!212 &212237302815820060
 SpriteRenderer:
   m_ObjectHideFlags: 1

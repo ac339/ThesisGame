@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * This code was take and adapted form the following website :https://steredenn-game.tumblr.com/post/98397504410/steredenn-making-an-expandable-laser
+ * 
+ * */
 public class Laser : MonoBehaviour {
     [Header("Laser pieces")]
     public GameObject laserStart;

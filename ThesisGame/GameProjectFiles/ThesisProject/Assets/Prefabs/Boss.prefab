@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4049291654913930}
   - component: {fileID: 212042134647468834}
   - component: {fileID: 50181027378652186}
-  - component: {fileID: 114814123541383174}
-  - component: {fileID: 114859162115479106}
   - component: {fileID: 60359953252608018}
+  - component: {fileID: 114581168939079874}
+  - component: {fileID: 114859162115479106}
   - component: {fileID: 114556277956770318}
   m_Layer: 19
   m_Name: Boss
@@ -391,12 +391,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d439646d33da2c46ba30504d516f734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: cc094ad4b93f5db41a96d4688e892032, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
-  isDestroyed: 0
---- !u!114 &114814123541383174
+  Explosion: {fileID: 100004, guid: cc094ad4b93f5db41a96d4688e892032, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
+  IsDestroyed: 0
+--- !u!114 &114581168939079874
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -404,14 +404,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1547771173454884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4329c9cca7c61f4598198f9349847c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8655ba1a7a836e24bb2acb0d5b3aad8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody2d: {fileID: 50181027378652186}
-  rotationspeed: 222.92
-  movingspeed: 11.35
-  hasAppeared: 0
-  range: 3.9
+  Rigidbody2d: {fileID: 50181027378652186}
+  RotationSpeed: 222.92
+  MovingSpeed: 11.35
+  HasAppeared: 0
+  Range: 3.9
 --- !u!114 &114859162115479106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,10 +423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb8c76af2a75604aa705f5d781c9995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 4
-  bulletImpulse: 11
-  projectile: {fileID: 1461467400355042, guid: a1367901d2d2755428ab7ed3ad1ac701, type: 2}
+  FreezeRotation: 0
+  Range: 4
+  BulletImpulse: 11
+  PlayerPos: {x: 0, y: 0, z: 0}
+  Projectile: {fileID: 1461467400355042, guid: a1367901d2d2755428ab7ed3ad1ac701, type: 2}
 --- !u!212 &212042134647468834
 SpriteRenderer:
   m_ObjectHideFlags: 1

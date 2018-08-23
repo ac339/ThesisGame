@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileController : MonoBehaviour {
     public List<GameObject> tileList;
-    public GameObject backgroundSpaceship;
+    public List<GameObject> backgroundmothership;
     public GameObject topTurret;
     public GameObject bottomTurret;
     public GameObject Boss;
@@ -22,7 +22,7 @@ public class TileController : MonoBehaviour {
     //Step 1 : Randomly Generate Bakground spaceship- when seeen then create tiles shortly after for a fixed duration of time
 
     void Start()
-    {
+    {/*
         //Seed components
         myRandom = new System.Random(PlayerPrefs.GetInt("Seed"));
         numberofSpaceshipTiles = myRandom.Next(50,100);
@@ -31,7 +31,7 @@ public class TileController : MonoBehaviour {
         ninthSpawnTime = myRandom.Next(10,17);
         //End
        // StartCoroutine(SpawnBackgroundSpaceShip());
-        bgSpaceshipHasAppeared = false;
+        bgSpaceshipHasAppeared = false;*/
     }
 
 
@@ -39,7 +39,7 @@ public class TileController : MonoBehaviour {
     {
 
     }
-
+    /*
     public IEnumerator SpawnBackgroundSpaceShip()
     {
        
@@ -50,9 +50,11 @@ public class TileController : MonoBehaviour {
                 if (l > 0) { 
                 yield return new WaitForSeconds(backgroundSpaceshipInbetweenWait);
                 }
-                Vector3 SpawnPositionBackgroundSpaceShip = new Vector3(-7, UnityEngine.Random.Range(-2, 2), backgroundSpaceship.transform.position.z);
+               
                 Quaternion spawnRotationBackgroundSpaceship = Quaternion.identity;
-                Instantiate(backgroundSpaceship, SpawnPositionBackgroundSpaceShip,backgroundSpaceship.transform.rotation);
+                 int mothershipIndex = UnityEngine.Random.Range(0, backgroundmothership.Count - 1);
+                Vector3 SpawnPositionBackgroundSpaceShip = new Vector3(-7, UnityEngine.Random.Range(-2, 2), backgroundmothership[mothershipIndex].transform.position.z);
+                Instantiate(backgroundmothership[mothershipIndex], SpawnPositionBackgroundSpaceShip, backgroundmothership[mothershipIndex].transform.rotation);
                 yield return new WaitForSeconds(initialWaitAfterBGSpaceship);
                 bgSpaceshipHasAppeared = true;
                 if (bgSpaceshipHasAppeared)
@@ -100,6 +102,6 @@ public class TileController : MonoBehaviour {
         
        
     }
-
+    */
 
  }

@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1710181447125518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.61966157, y: -0.18813841, z: -4}
+  m_LocalPosition: {x: 0.61966157, y: -0.18813841, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4370345853030512}
@@ -353,10 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e0d39d990b8bf4189d71d876bf2d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRotationSpeed: 30
-  maxRotationSpeed: 60
-  minMovementSpeed: 0.5
-  maxMovementSpeed: 1.3
 --- !u!114 &114287970457948646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,9 +364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 50
-  bulletImpulse: 20
+  FreezeRotation: 0
+  Range: 50
+  BulletImpulse: 20
   projectile: {fileID: 1140701381854852, guid: d395877e93314cc4890b1bd3ef9d28a8, type: 2}
 --- !u!114 &114575957415448596
 MonoBehaviour:
@@ -383,10 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e0d39d990b8bf4189d71d876bf2d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRotationSpeed: 30
-  maxRotationSpeed: 60
-  minMovementSpeed: 0.5
-  maxMovementSpeed: 1.3
 --- !u!114 &114580789390508824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,11 +390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fb983fef1869c4f866ab61612adc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
+  IsDestroyed: 0
 --- !u!114 &114757328956550154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -414,11 +406,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fb983fef1869c4f866ab61612adc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
+  IsDestroyed: 0
 --- !u!114 &114804679066181680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,9 +422,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 50
-  bulletImpulse: 20
+  FreezeRotation: 0
+  Range: 50
+  BulletImpulse: 20
   projectile: {fileID: 1140701381854852, guid: d395877e93314cc4890b1bd3ef9d28a8, type: 2}
 --- !u!114 &114840674286241876
 MonoBehaviour:
@@ -445,11 +437,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fb983fef1869c4f866ab61612adc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
+  IsDestroyed: 0
 --- !u!114 &114863359507022532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -461,9 +453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 50
-  bulletImpulse: 20
+  FreezeRotation: 0
+  Range: 50
+  BulletImpulse: 20
   projectile: {fileID: 1140701381854852, guid: d395877e93314cc4890b1bd3ef9d28a8, type: 2}
 --- !u!114 &114999572887719542
 MonoBehaviour:
@@ -476,10 +468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e0d39d990b8bf4189d71d876bf2d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRotationSpeed: 30
-  maxRotationSpeed: 60
-  minMovementSpeed: 0.5
-  maxMovementSpeed: 1.3
 --- !u!198 &198659843700318548
 ParticleSystem:
   m_ObjectHideFlags: 1

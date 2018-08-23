@@ -38,11 +38,10 @@ GameObject:
   - component: {fileID: 4271111045317350}
   - component: {fileID: 212217978197938780}
   - component: {fileID: 50180834913036262}
-  - component: {fileID: 70588406552516052}
+  - component: {fileID: 60043142827046274}
   - component: {fileID: 114355444710877508}
   - component: {fileID: 114142373015299756}
   - component: {fileID: 114108233292776070}
-  - component: {fileID: 82597727404472790}
   m_Layer: 12
   m_Name: Enemy
   m_TagString: EnemyShip
@@ -70,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1068094900347740}
   m_LocalRotation: {x: 0, y: 0, z: -0.7268144, w: 0.686834}
-  m_LocalPosition: {x: 2.0327272, y: 0.10169503, z: -4}
+  m_LocalPosition: {x: 2.0327272, y: 0.10169503, z: -3}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 4270114636978584}
@@ -97,8 +96,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!70 &70588406552516052
-CapsuleCollider2D:
+--- !u!60 &60043142827046274
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -109,104 +108,73 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03}
-  m_Size: {x: 2.63, y: 2.31}
-  m_Direction: 0
---- !u!82 &82597727404472790
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1068094900347740}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.98, y: 1.98}
+    newSize: {x: 1.98, y: 1.98}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.56, y: -0.29999998}
+      - {x: -0.58, y: -0.099999994}
+      - {x: -0.53999996, y: -0.089999996}
+      - {x: -0.45999998, y: -0.28}
+      - {x: -0.42, y: -0.32}
+      - {x: -0.42999998, y: -0.48999998}
+      - {x: -0.35999998, y: -0.53999996}
+      - {x: -0.26, y: -0.53}
+      - {x: -0.17999999, y: -0.53999996}
+      - {x: -0.12, y: -0.59999996}
+      - {x: -0.01, y: -0.56}
+      - {x: 0.11, y: -0.59}
+      - {x: 0.17999999, y: -0.53999996}
+      - {x: 0.35, y: -0.53}
+      - {x: 0.42, y: -0.48999998}
+      - {x: 0.45999998, y: -0.28}
+      - {x: 0.5, y: -0.19}
+      - {x: 0.55, y: -0.08}
+      - {x: 0.57, y: -0.17999999}
+      - {x: 0.53999996, y: -0.42}
+      - {x: 0.48, y: -0.69}
+      - {x: 0.52, y: -0.74}
+      - {x: 0.65999997, y: -0.84999996}
+      - {x: 0.69, y: -0.87}
+      - {x: 0.71, y: -0.87}
+      - {x: 0.74, y: -0.84}
+      - {x: 0.85999995, y: -0.42}
+      - {x: 0.89, y: -0.19999999}
+      - {x: 0.89, y: -0.14999999}
+      - {x: 0.82, y: 0.17}
+      - {x: 0.72999996, y: 0.35999998}
+      - {x: 0.59, y: 0.56}
+      - {x: 0.53999996, y: 0.66999996}
+      - {x: 0.42, y: 0.77}
+      - {x: 0.35, y: 0.79999995}
+      - {x: 0.29999998, y: 0.79999995}
+      - {x: 0.19, y: 0.71}
+      - {x: 0.08, y: 0.53999996}
+      - {x: -0.19, y: 0.71}
+      - {x: -0.26999998, y: 0.79999995}
+      - {x: -0.34, y: 0.79999995}
+      - {x: -0.42, y: 0.77}
+      - {x: -0.58, y: 0.61}
+      - {x: -0.77, y: 0.26999998}
+      - {x: -0.83, y: 0.12}
+      - {x: -0.84, y: 0.03}
+      - {x: -0.89, y: -0.17}
+      - {x: -0.89, y: -0.22999999}
+      - {x: -0.82, y: -0.61}
+      - {x: -0.74, y: -0.84999996}
+      - {x: -0.71999997, y: -0.87}
+      - {x: -0.68, y: -0.87}
+      - {x: -0.51, y: -0.74}
+      - {x: -0.48999998, y: -0.71}
+      - {x: -0.48, y: -0.66999996}
 --- !u!114 &114108233292776070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,9 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca031391e22d6545b02f5333dca6751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11.55
-  rigidbody: {fileID: 50180834913036262}
-  random: 0
+  Speed: 11.55
+  Rigidbody: {fileID: 50180834913036262}
+  IsRandom: 0
   floatStrength: -0.21
 --- !u!114 &114142373015299756
 MonoBehaviour:
@@ -233,12 +201,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309cf187d8fd5e946ad6d352030f4aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 50
-  enemyShipHealth: 10
-  enemyShipBulletPower: 1
-  isDestroyed: 0
-  soundeffect: {fileID: 8300000, guid: 8c76d3a862d37544087075554ff7fe2f, type: 3}
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 50
+  EnemyShipHealth: 10
+  EnemyShipBulletPower: 1
+  IsDestroyed: 0
 --- !u!114 &114355444710877508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,9 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 3
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 2.5
+  BulletImpulse: 8
   projectile: {fileID: 1140701381854852, guid: 305a3e6cf161f8842915d71ed4dcf8f1, type: 2}
 --- !u!198 &198494431491740024
 ParticleSystem:

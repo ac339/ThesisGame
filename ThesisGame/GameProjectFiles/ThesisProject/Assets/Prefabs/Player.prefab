@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4710531100990958}
   - component: {fileID: 212506305711083258}
   - component: {fileID: 50272807426841882}
-  - component: {fileID: 70839667240506216}
+  - component: {fileID: 60749135679141244}
   - component: {fileID: 114565779645448618}
   - component: {fileID: 114870412230215430}
   - component: {fileID: 82094700701444530}
@@ -125,8 +125,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &70839667240506216
-CapsuleCollider2D:
+--- !u!60 &60749135679141244
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -137,9 +137,76 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.18}
-  m_Size: {x: 1.66, y: 2.93}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.73, y: 2.91}
+    newSize: {x: 1.73, y: 2.91}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.105, y: -1.415}
+      - {x: 0.21499999, y: -1.415}
+      - {x: 0.265, y: -1.345}
+      - {x: 0.295, y: -1.175}
+      - {x: 0.49499997, y: -1.125}
+      - {x: 0.555, y: -1.005}
+      - {x: 0.715, y: -1.125}
+      - {x: 0.755, y: -1.145}
+      - {x: 0.775, y: -1.145}
+      - {x: 0.79499996, y: -1.125}
+      - {x: 0.79499996, y: -0.465}
+      - {x: 0.78499997, y: -0.435}
+      - {x: 0.72499996, y: -0.465}
+      - {x: 0.675, y: -0.625}
+      - {x: 0.555, y: -0.475}
+      - {x: 0.515, y: -0.36499998}
+      - {x: 0.33499998, y: -0.035}
+      - {x: 0.33499998, y: 0.13499999}
+      - {x: 0.39499998, y: 0.205}
+      - {x: 0.405, y: 0.745}
+      - {x: 0.345, y: 0.905}
+      - {x: 0.095, y: 1.285}
+      - {x: 0.044999998, y: 1.3349999}
+      - {x: 0.015, y: 1.3249999}
+      - {x: 0.005, y: 1.035}
+      - {x: -0.015, y: 1.3149999}
+      - {x: -0.035, y: 1.3349999}
+      - {x: -0.055, y: 1.3349999}
+      - {x: -0.145, y: 1.2149999}
+      - {x: -0.24499999, y: 1.035}
+      - {x: -0.345, y: 0.905}
+      - {x: -0.39499998, y: 0.73499995}
+      - {x: -0.405, y: 0.225}
+      - {x: -0.345, y: 0.005}
+      - {x: -0.385, y: -0.125}
+      - {x: -0.48499998, y: -0.285}
+      - {x: -0.645, y: -0.625}
+      - {x: -0.73499995, y: -0.465}
+      - {x: -0.765, y: -0.445}
+      - {x: -0.79499996, y: -0.45499998}
+      - {x: -0.79499996, y: -1.125}
+      - {x: -0.78499997, y: -1.155}
+      - {x: -0.705, y: -1.135}
+      - {x: -0.565, y: -1.005}
+      - {x: -0.475, y: -1.125}
+      - {x: -0.375, y: -1.155}
+      - {x: -0.33499998, y: -1.0649999}
+      - {x: -0.265, y: -1.405}
+      - {x: -0.21499999, y: -1.415}
+      - {x: -0.085, y: -1.415}
+      - {x: -0.015, y: -1.2149999}
+      - {x: -0.005, y: -1.015}
+      - {x: 0.024999999, y: -1.225}
+    - - {x: -0.065, y: 0.715}
+      - {x: -0.074999996, y: 0.515}
+      - {x: -0.065, y: 0.515}
+    - - {x: 0.065, y: 0.715}
+      - {x: 0.074999996, y: 0.515}
 --- !u!82 &82094700701444530
 AudioSource:
   m_ObjectHideFlags: 1
@@ -263,6 +330,11 @@ MonoBehaviour:
   bulletSpeedSlider: {fileID: 0}
   bulletPowerSlider: {fileID: 0}
   LaserBeamSlider: {fileID: 0}
+  soundeffect: {fileID: 0}
+  evolution1: {fileID: 0}
+  evolution2: {fileID: 0}
+  evolution3: {fileID: 0}
+  jingle: {fileID: 0}
 --- !u!114 &114870412230215430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,6 +359,7 @@ MonoBehaviour:
   HPText: {fileID: 0}
   explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
   playerPosition: {fileID: 4710531100990958}
+  soundeffect: {fileID: 0}
 --- !u!198 &198033952365014076
 ParticleSystem:
   m_ObjectHideFlags: 1

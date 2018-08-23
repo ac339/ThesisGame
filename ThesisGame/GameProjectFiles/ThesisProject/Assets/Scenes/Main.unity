@@ -576,7 +576,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4710531100990958, guid: c8eca1c19f4830d4e85d442d2009b4bb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.87
+      value: -2.108
       objectReference: {fileID: 0}
     - target: {fileID: 4710531100990958, guid: c8eca1c19f4830d4e85d442d2009b4bb, type: 2}
       propertyPath: m_LocalPosition.y
@@ -656,6 +656,208 @@ Prefab:
       propertyPath: soundeffect
       value: 
       objectReference: {fileID: 8300000, guid: 2e6f6fc4f3d3b36408d76f11c14b7336, type: 3}
+    - target: {fileID: 82094700701444530, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Priority
+      value: 197
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: evolution1
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fd72b11d8a251a48a4f35a862479f6a,
+        type: 3}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: evolution2
+      value: 
+      objectReference: {fileID: 21300000, guid: ebd6fec444a5d254bb76db5ea0916313,
+        type: 3}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: evolution3
+      value: 
+      objectReference: {fileID: 21300000, guid: c0ab3c72984f62b46845958f423dd5d8,
+        type: 3}
+    - target: {fileID: 212506305711083258, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: jingle
+      value: 
+      objectReference: {fileID: 100004, guid: dfb524c8bb23c824f8a10bb5f48b6f6f, type: 2}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: tilt
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: speed
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Rigidbody
+      value: 
+      objectReference: {fileID: 1507424436}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Speed
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Boundary.xMin
+      value: -2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Tilt
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Boundary.xMax
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Boundary.yMin
+      value: -2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Boundary.yMax
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: ShotSpawn
+      value: 
+      objectReference: {fileID: 1758943047}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: FireRate
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Laser
+      value: 
+      objectReference: {fileID: 1368303681177548, guid: 41e659e8da8df7140a6336c58934e5ff,
+        type: 2}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: BulletSpeed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: BulletPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: BulletSpeedSlider
+      value: 
+      objectReference: {fileID: 1220869721}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: BulletPowerSlider
+      value: 
+      objectReference: {fileID: 926049664}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: SoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e6f6fc4f3d3b36408d76f11c14b7336, type: 3}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Jingle
+      value: 
+      objectReference: {fileID: 100004, guid: dfb524c8bb23c824f8a10bb5f48b6f6f, type: 2}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Evolution1
+      value: 
+      objectReference: {fileID: 21300000, guid: 2fd72b11d8a251a48a4f35a862479f6a,
+        type: 3}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Evolution2
+      value: 
+      objectReference: {fileID: 21300000, guid: ebd6fec444a5d254bb76db5ea0916313,
+        type: 3}
+    - target: {fileID: 114565779645448618, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Evolution3
+      value: 
+      objectReference: {fileID: 21300000, guid: c0ab3c72984f62b46845958f423dd5d8,
+        type: 3}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: HealthBarSlider
+      value: 
+      objectReference: {fileID: 1272995481}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: BulletSpeedSlider
+      value: 
+      objectReference: {fileID: 1220869721}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: BulletPowerSlider
+      value: 
+      objectReference: {fileID: 926049664}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: GameOverText
+      value: 
+      objectReference: {fileID: 536631987}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: HazardDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: HealthPowerUp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: HealthPowerUpHealthBar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: BulletSpeedPowerUp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: BulletPowerPowerUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: PlayerPosition
+      value: 
+      objectReference: {fileID: 1507424438}
+    - target: {fileID: 114870412230215430, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+        type: 2}
+      propertyPath: SoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a3b0526804397c4e9c241c82a75ab44, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8eca1c19f4830d4e85d442d2009b4bb, type: 2}
   m_IsPrefabParent: 0
@@ -1471,6 +1673,355 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &1055721789
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: tileList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: TileList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: backgroundmothership.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BackgroundMothership.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223365401886080, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223365401886080, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223365401886080, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223365401886080, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223365401886080, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223365401886080, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223365401886080, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223365401886080, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1550880220}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: seedText
+      value: 
+      objectReference: {fileID: 869885670}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: healthBarSlider
+      value: 
+      objectReference: {fileID: 1272995481}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: spawnValuesPU.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: spawnValues.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: tileList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: tileList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: backgroundmothership.Array.data[0]
+      value: 
+      objectReference: {fileID: 1253128679421438, guid: b50db490d40db6d49a942c2b595de69d,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: topTurret
+      value: 
+      objectReference: {fileID: 1779116815673474, guid: e958338ae2cdbc04784876e4c1ade751,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: bottomTurret
+      value: 
+      objectReference: {fileID: 1545154850976844, guid: 392f4375807f89e4090594ae964477a3,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: Boss
+      value: 
+      objectReference: {fileID: 1547771173454884, guid: 9ab70145934c2764381c737a9feed558,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: backgroundmothership.Array.data[1]
+      value: 
+      objectReference: {fileID: 1572646264754898, guid: f3993ebc73077de42bb4d14540d883dc,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: backgroundmothership.Array.data[2]
+      value: 
+      objectReference: {fileID: 1253128679421438, guid: 9226338b980816f4ea2cc4de582f584c,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BossWait
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: initialWaitAfterBGSpaceship
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: backgroundSpaceshipInbetweenWait
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: warningObj
+      value: 
+      objectReference: {fileID: 1129150064024180, guid: c42f2f9ab7956074c8f711cc84bb3430,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: healthRecoveryPowerup
+      value: 
+      objectReference: {fileID: 1099039540006556, guid: 6d0ce74a84385204cb010ab51a839e58,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: bulletDamagePowerUp
+      value: 
+      objectReference: {fileID: 1703608226388282, guid: f79d774c15ca25c429a122b8574346f6,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: bulletSpeedPowerUp
+      value: 
+      objectReference: {fileID: 1269136779235158, guid: ceb8e137673fc9b41a48726dd5d610f3,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: healthIncreasePowerUp
+      value: 
+      objectReference: {fileID: 1583765745902226, guid: 862420d2fc6798f49beb49e145e3f067,
+        type: 2}
+    - target: {fileID: 1466217277563822, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: hazards.Array.data[2]
+      value: 
+      objectReference: {fileID: 1017582631808338, guid: c43269c643a186f4186f9ad161ee864d,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: spawnValues.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: spawnValuesPU.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: HealthRecoveryPowerup
+      value: 
+      objectReference: {fileID: 1099039540006556, guid: 6d0ce74a84385204cb010ab51a839e58,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: HealthIncreasePowerUp
+      value: 
+      objectReference: {fileID: 1583765745902226, guid: 862420d2fc6798f49beb49e145e3f067,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BulletSpeedPowerUp
+      value: 
+      objectReference: {fileID: 1269136779235158, guid: ceb8e137673fc9b41a48726dd5d610f3,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BulletDamagePowerUp
+      value: 
+      objectReference: {fileID: 1703608226388282, guid: f79d774c15ca25c429a122b8574346f6,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1068094900347740, guid: ee0bb182099bf1a48975a8a55b605081,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: WormHole
+      value: 
+      objectReference: {fileID: 1419984096219222, guid: 792127f8d54de7f4b8550cca30443817,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: WarningObj
+      value: 
+      objectReference: {fileID: 1129150064024180, guid: c42f2f9ab7956074c8f711cc84bb3430,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: SpawnValues.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: SpawnValues.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: SpawnValues.z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: SpawnValuesPU.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: SpawnValuesPU.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: SpawnValuesPU.z
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: HazardCount
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: PowerUpCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: WormHoleCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: ScoreText
+      value: 
+      objectReference: {fileID: 1550880220}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: SeedText
+      value: 
+      objectReference: {fileID: 869885670}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: TileList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: TileList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BackgroundMothership.Array.data[0]
+      value: 
+      objectReference: {fileID: 1253128679421438, guid: b50db490d40db6d49a942c2b595de69d,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BackgroundMothership.Array.data[1]
+      value: 
+      objectReference: {fileID: 1572646264754898, guid: f3993ebc73077de42bb4d14540d883dc,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BackgroundMothership.Array.data[2]
+      value: 
+      objectReference: {fileID: 1253128679421438, guid: 9226338b980816f4ea2cc4de582f584c,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BottomTurret
+      value: 
+      objectReference: {fileID: 1545154850976844, guid: 392f4375807f89e4090594ae964477a3,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: TopTurret
+      value: 
+      objectReference: {fileID: 1779116815673474, guid: e958338ae2cdbc04784876e4c1ade751,
+        type: 2}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: InitialWaitAfterBGSpaceship
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076673397771872, guid: 6fcf29b141a28204a8c4515d4dbb149a,
+        type: 2}
+      propertyPath: BackgroundSpaceshipInbetweenWait
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6fcf29b141a28204a8c4515d4dbb149a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1062909794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,144 +2243,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &1239118425
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1239118427}
-  - component: {fileID: 1239118426}
-  m_Layer: 9
-  m_Name: Game Controller
-  m_TagString: GameController
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1239118426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1239118425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d40571b423dc9e4e807fa3217e4731c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefablist:
-  - {fileID: 1099039540006556, guid: 6d0ce74a84385204cb010ab51a839e58, type: 2}
-  - {fileID: 1269136779235158, guid: ceb8e137673fc9b41a48726dd5d610f3, type: 2}
-  - {fileID: 1703608226388282, guid: f79d774c15ca25c429a122b8574346f6, type: 2}
-  - {fileID: 1583765745902226, guid: 862420d2fc6798f49beb49e145e3f067, type: 2}
-  - {fileID: 1703608226388282, guid: f79d774c15ca25c429a122b8574346f6, type: 2}
-  hazards:
-  - {fileID: 1017582631808338, guid: 23021d00def0bb44bbcf39a6d9d99ff3, type: 2}
-  - {fileID: 1017582631808338, guid: d0d9e94432bf87a44ab09f97120b7db1, type: 2}
-  - {fileID: 1017582631808338, guid: c43269c643a186f4186f9ad161ee864d, type: 2}
-  - {fileID: 1017582631808338, guid: 707f8a94127697947b0956077bb4cc3d, type: 2}
-  - {fileID: 1017582631808338, guid: 707f8a94127697947b0956077bb4cc3d, type: 2}
-  EpicPowerUp: {fileID: 1410129628769160, guid: 00e6aeb042fa41c4a84e7f064a8fb66e,
-    type: 2}
-  hazard: {fileID: 1017582631808338, guid: 23021d00def0bb44bbcf39a6d9d99ff3, type: 2}
-  powerUp: {fileID: 1099039540006556, guid: 6d0ce74a84385204cb010ab51a839e58, type: 2}
-  enemy: {fileID: 1068094900347740, guid: ee0bb182099bf1a48975a8a55b605081, type: 2}
-  powerUpSpeed: {fileID: 1269136779235158, guid: ceb8e137673fc9b41a48726dd5d610f3,
-    type: 2}
-  powerUpBulletPower: {fileID: 1703608226388282, guid: f79d774c15ca25c429a122b8574346f6,
-    type: 2}
-  powerUpHealthBar: {fileID: 1583765745902226, guid: 862420d2fc6798f49beb49e145e3f067,
-    type: 2}
-  wormHole: {fileID: 1419984096219222, guid: 792127f8d54de7f4b8550cca30443817, type: 2}
-  Type1EnemyWave: {fileID: 1544685921801490, guid: 5596ecc6b8a2408408a8c35df020a2cf,
-    type: 2}
-  Type2EnemyWave: {fileID: 1450191395867962, guid: 79576a5be59ea49488c56157f4e3aed8,
-    type: 2}
-  Type3EnemyWave: {fileID: 1710181447125518, guid: a2194f4bcc341c946b573c419171525e,
-    type: 2}
-  spawnValues: {x: 12, y: 2.7, z: -1.5}
-  spawnValuesPU: {x: 12, y: 2.69, z: -1.5}
-  hazardCount: 43
-  powerUpCount: 10
-  enemyCount: 0
-  wormHoleCount: 10
-  spawnWait: 1
-  startWait: 1
-  waveWait: 1
-  powerUpSpawnWait: 1
-  powerUpStartWait: 1
-  powerUpWaveWait: 1
-  wormHoleWaveWait: 3
-  scoreText: {fileID: 1550880220}
-  seedText: {fileID: 869885670}
-  numberOfEnemies: 30
-  enemyWaveWait: 4
-  radius: 37
-  isGameOver: 0
-  healthBarSlider: {fileID: 1272995481}
-  newGamePlusMultiplier: 1
-  EnemyShipRed: 0
-  EnemyShipGreen: 0
-  EnemyShipBlue: 0
-  EnemyShipTwoRed: 0
-  EnemyShipTwoGreen: 0
-  EnemyShipTwoBlue: 0
-  EnemyShipThreeRed: 0
-  EnemyShipThreeGreen: 0
-  EnemyShipThreeBlue: 0
-  BossRed: 0
-  BossGreen: 0
-  BossBlue: 0
-  BackgroundRed: 0
-  BackgroundGreen: 0
-  BackgroundBlue: 0
-  turretrange: 0
-  turretbulletImpulse: 0
-  turrethealthPoints: 0
-  turretscore: 0
-  turretBulletPower: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
-  enemyShipScoreValue: 0
-  enemyShipTwoHealth: 0
-  enemyShipTwoBulletPower: 0
-  enemyShipTwoScoreValue: 0
-  enemyShipThreeHealth: 0
-  enemyShipThreeBulletPower: 0
-  enemyShipThreeScoreValue: 0
-  tileDamage: 0
-  bossTouchDamage: 0
-  bossBulletDamage: 0
-  bossHealth: 0
-  bossScore: 0
-  bossRange: 0
-  bossBulletImpulse: 0
-  hazardHealth: 0
-  hazardScore: 0
-  powerupSpeedInt: 0
-  powerUpBulletStrength: 0
-  powerUpHealthRegen: 0
-  powerUpExpandHealthBar: 0
-  enemyType1Difficulty: 0
-  enemyType2Difficulty: 0
-  enemyType3Difficulty: 0
-  enemyType1Speed: 0
-  enemyType2Speed: 0
---- !u!4 &1239118427
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1239118425}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1259776071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2606,16 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!50 &1507424436 stripped
+Rigidbody2D:
+  m_PrefabParentObject: {fileID: 50272807426841882, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 484737639}
+--- !u!4 &1507424438 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4710531100990958, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 484737639}
 --- !u!1 &1550880218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,66 +2771,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 142d2454c2b821e488a17dcdc31ec2e6, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1666247959
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1666247961}
-  - component: {fileID: 1666247960}
-  m_Layer: 17
-  m_Name: Tile Controller
-  m_TagString: Tiles
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1666247960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1666247959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b9483c0fe2238499e45b815ddad84f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileList:
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  - {fileID: 1490839790501876, guid: 4597f93b69da98449a5b84287007025d, type: 2}
-  backgroundSpaceship: {fileID: 1253128679421438, guid: b50db490d40db6d49a942c2b595de69d,
-    type: 2}
-  topTurret: {fileID: 1779116815673474, guid: e958338ae2cdbc04784876e4c1ade751, type: 2}
-  bottomTurret: {fileID: 1545154850976844, guid: 392f4375807f89e4090594ae964477a3,
-    type: 2}
-  Boss: {fileID: 1547771173454884, guid: 9ab70145934c2764381c737a9feed558, type: 2}
-  BossWait: 15
-  initialWaitAfterBGSpaceship: 10
-  backgroundSpaceshipInbetweenWait: 40
---- !u!4 &1666247961
+--- !u!4 &1758943047 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1666247959}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7372059, y: -1.216517, z: -3.8342776}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_PrefabParentObject: {fileID: 4072570366969328, guid: c8eca1c19f4830d4e85d442d2009b4bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 484737639}
 --- !u!1 &1854770059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,7 +2804,7 @@ Transform:
   - {fileID: 641382944}
   - {fileID: 769277462}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944257813
 GameObject:

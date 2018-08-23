@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 4079414275458034}
   m_Layer: 0
   m_Name: EnemyTypeOneWave
-  m_TagString: Untagged
+  m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -656,11 +656,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309cf187d8fd5e946ad6d352030f4aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 50
-  enemyShipHealth: 10
-  enemyShipBulletPower: 1
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 50
+  EnemyShipHealth: 10
+  EnemyShipBulletPower: 1
+  IsDestroyed: 0
 --- !u!114 &114148843419043948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -672,11 +672,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309cf187d8fd5e946ad6d352030f4aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 50
-  enemyShipHealth: 10
-  enemyShipBulletPower: 1
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 50
+  EnemyShipHealth: 10
+  EnemyShipBulletPower: 1
+  IsDestroyed: 0
 --- !u!114 &114187908084438382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -688,11 +688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309cf187d8fd5e946ad6d352030f4aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 50
-  enemyShipHealth: 10
-  enemyShipBulletPower: 1
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 50
+  EnemyShipHealth: 10
+  EnemyShipBulletPower: 1
+  IsDestroyed: 0
 --- !u!114 &114244022703126636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,9 +704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca031391e22d6545b02f5333dca6751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11.55
-  rigidbody: {fileID: 50980944127783314}
-  random: 0
+  Speed: 11.55
+  Rigidbody: {fileID: 50980944127783314}
+  IsRandom: 0
   floatStrength: -0.21
 --- !u!114 &114362092514270334
 MonoBehaviour:
@@ -719,9 +719,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 3
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 3
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 305a3e6cf161f8842915d71ed4dcf8f1, type: 2}
 --- !u!114 &114365854864586310
 MonoBehaviour:
@@ -734,9 +734,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 3
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 3
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 305a3e6cf161f8842915d71ed4dcf8f1, type: 2}
 --- !u!114 &114394195265836708
 MonoBehaviour:
@@ -749,9 +749,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 3
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 3
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 305a3e6cf161f8842915d71ed4dcf8f1, type: 2}
 --- !u!114 &114585213693438036
 MonoBehaviour:
@@ -764,9 +764,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 3
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 3
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 305a3e6cf161f8842915d71ed4dcf8f1, type: 2}
 --- !u!114 &114645969106619858
 MonoBehaviour:
@@ -779,9 +779,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca031391e22d6545b02f5333dca6751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11.55
-  rigidbody: {fileID: 50767745767095718}
-  random: 0
+  Speed: 11.55
+  Rigidbody: {fileID: 50767745767095718}
+  IsRandom: 0
   floatStrength: -0.21
 --- !u!114 &114762144447365658
 MonoBehaviour:
@@ -794,11 +794,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309cf187d8fd5e946ad6d352030f4aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 50
-  enemyShipHealth: 10
-  enemyShipBulletPower: 1
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 50
+  EnemyShipHealth: 10
+  EnemyShipBulletPower: 1
+  IsDestroyed: 0
 --- !u!114 &114832822758157452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -810,11 +810,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309cf187d8fd5e946ad6d352030f4aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 50
-  enemyShipHealth: 10
-  enemyShipBulletPower: 1
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 50
+  EnemyShipHealth: 10
+  EnemyShipBulletPower: 1
+  IsDestroyed: 0
 --- !u!114 &114863135955293332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -826,9 +826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 3
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 3
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 305a3e6cf161f8842915d71ed4dcf8f1, type: 2}
 --- !u!114 &114865993307004816
 MonoBehaviour:
@@ -841,9 +841,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca031391e22d6545b02f5333dca6751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11.55
-  rigidbody: {fileID: 50886274287730176}
-  random: 0
+  Speed: 11.55
+  Rigidbody: {fileID: 50886274287730176}
+  IsRandom: 0
   floatStrength: -0.21
 --- !u!114 &114896294900470272
 MonoBehaviour:
@@ -856,9 +856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 3
-  bulletImpulse: 10
+  FreezeRotation: 0
+  Range: 3
+  BulletImpulse: 10
   projectile: {fileID: 1140701381854852, guid: 305a3e6cf161f8842915d71ed4dcf8f1, type: 2}
 --- !u!114 &114899051084547102
 MonoBehaviour:
@@ -871,9 +871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca031391e22d6545b02f5333dca6751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11.55
-  rigidbody: {fileID: 50271128672891310}
-  random: 0
+  Speed: 11.55
+  Rigidbody: {fileID: 50271128672891310}
+  IsRandom: 0
   floatStrength: -0.21
 --- !u!114 &114914177161758448
 MonoBehaviour:
@@ -886,9 +886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca031391e22d6545b02f5333dca6751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11.55
-  rigidbody: {fileID: 50035819364468776}
-  random: 0
+  Speed: 11.55
+  Rigidbody: {fileID: 50035819364468776}
+  IsRandom: 0
   floatStrength: -0.21
 --- !u!114 &114927616737455380
 MonoBehaviour:
@@ -901,9 +901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca031391e22d6545b02f5333dca6751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11.55
-  rigidbody: {fileID: 50182319092369646}
-  random: 0
+  Speed: 11.55
+  Rigidbody: {fileID: 50182319092369646}
+  IsRandom: 0
   floatStrength: -0.21
 --- !u!114 &114962577358337322
 MonoBehaviour:
@@ -916,11 +916,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309cf187d8fd5e946ad6d352030f4aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 50
-  enemyShipHealth: 10
-  enemyShipBulletPower: 1
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 50
+  EnemyShipHealth: 10
+  EnemyShipBulletPower: 1
+  IsDestroyed: 0
 --- !u!198 &198009054737168812
 ParticleSystem:
   m_ObjectHideFlags: 1

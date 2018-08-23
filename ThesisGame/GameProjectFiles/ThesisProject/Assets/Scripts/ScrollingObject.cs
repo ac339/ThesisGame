@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * 
+ * This script is repsonsible for moving the background images of the game
+ * to create a scrolling effect
+ * 
+ * */
 public class ScrollingObject : MonoBehaviour
 {
+    //Creating a variable that will determine the scrolling speed of the game object
     public float scrollSpeed = -1.5f;
-
+    // Creating a variable for storing a reference to the Rigidbody2D properties of the game object
     private Rigidbody2D rb2d;
 
     // Use this for initialization
@@ -18,12 +24,5 @@ public class ScrollingObject : MonoBehaviour
         rb2d.velocity = new Vector2(scrollSpeed, 0);
     }
 
-    void Update()
-    {
-        // If the game is over, stop scrolling.
-       // if (GameControl.instance.gameOver == true)
-        //{
-        //    rb2d.velocity = Vector2.zero;
-       // }
-    }
+  
 }

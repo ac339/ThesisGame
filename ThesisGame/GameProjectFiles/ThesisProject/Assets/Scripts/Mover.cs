@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/**
+ * This script allows to set a speed for a game object for traversing the screen horizontally
+ * */ 
 public class Mover : MonoBehaviour
 {
-    public float speed;
-    public new Rigidbody2D rigidbody;
-    public bool random;
+    public float Speed;
+    public new Rigidbody2D Rigidbody;
+    public bool IsRandom;
 
     void Start()
     {
-        if(random)
-        rigidbody.velocity = Random.value* transform.right * speed;
+        if(IsRandom)
+            Rigidbody.velocity = Random.value* transform.right * Speed;
         {
-            rigidbody.velocity =  transform.right * speed;
+            Rigidbody.velocity =  transform.right * Speed;
         }
     }
 }

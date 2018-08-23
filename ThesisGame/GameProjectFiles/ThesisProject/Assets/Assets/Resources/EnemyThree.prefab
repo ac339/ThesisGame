@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4738832936066714}
   - component: {fileID: 212748461424892476}
   - component: {fileID: 50765973452689572}
-  - component: {fileID: 70690875569254814}
+  - component: {fileID: 60074069628315732}
   - component: {fileID: 114445377259457512}
   - component: {fileID: 114572678830223058}
   - component: {fileID: 114379578012937926}
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1153334724969180}
   m_LocalRotation: {x: 0, y: 0, z: -0.7268144, w: 0.686834}
-  m_LocalPosition: {x: 0.928184, y: 0.94909316, z: -4}
+  m_LocalPosition: {x: 0.928184, y: 0.94909316, z: -3}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4046382725874668}
@@ -96,8 +96,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!70 &70690875569254814
-CapsuleCollider2D:
+--- !u!60 &60074069628315732
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -108,9 +108,59 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03}
-  m_Size: {x: 2.63, y: 2.31}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.98, y: 1.98}
+    newSize: {x: 1.98, y: 1.98}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22999999, y: -0.66999996}
+      - {x: 0.35, y: -0.66999996}
+      - {x: 0.42999998, y: -0.65}
+      - {x: 0.44, y: -0.53}
+      - {x: 0.48999998, y: -0.55}
+      - {x: 0.59999996, y: -0.55}
+      - {x: 0.65999997, y: -0.5}
+      - {x: 0.71, y: -0.45}
+      - {x: 0.81, y: -0.48}
+      - {x: 0.89, y: -0.42999998}
+      - {x: 0.90999997, y: -0.38}
+      - {x: 0.97999996, y: -0.12}
+      - {x: 0.97999996, y: 0.04}
+      - {x: 0.90999997, y: 0.41}
+      - {x: 0.84999996, y: 0.48999998}
+      - {x: 0.59, y: 0.81}
+      - {x: 0.52, y: 0.78}
+      - {x: 0.48, y: 0.82}
+      - {x: 0.29999998, y: 0.87}
+      - {x: 0.13, y: 0.90999997}
+      - {x: -0.14, y: 0.90999997}
+      - {x: -0.35, y: 0.87}
+      - {x: -0.59, y: 0.79999995}
+      - {x: -0.76, y: 0.59999996}
+      - {x: -0.90999997, y: 0.41}
+      - {x: -0.96999997, y: 0.13}
+      - {x: -0.97999996, y: 0}
+      - {x: -0.97999996, y: -0.099999994}
+      - {x: -0.9, y: -0.37}
+      - {x: -0.9, y: -0.41}
+      - {x: -0.81, y: -0.48999998}
+      - {x: -0.65999997, y: -0.51}
+      - {x: -0.61, y: -0.56}
+      - {x: -0.5, y: -0.55}
+      - {x: -0.44, y: -0.51}
+      - {x: -0.44, y: -0.63}
+      - {x: -0.37, y: -0.66999996}
+      - {x: -0.22, y: -0.66999996}
+      - {x: -0.14, y: -0.64}
+      - {x: 0.04, y: -0.63}
+      - {x: 0.17, y: -0.64}
 --- !u!114 &114379578012937926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,11 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fb983fef1869c4f866ab61612adc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
-  scoreValue: 0
-  enemyShipHealth: 0
-  enemyShipBulletPower: 0
-  isDestroyed: 0
+  Explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+  ScoreValue: 0
+  EnemyShipHealth: 0
+  EnemyShipBulletPower: 0
+  IsDestroyed: 0
 --- !u!114 &114445377259457512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,9 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad81bb76bbbe56d48865f1f725e9c015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeRotation: 0
-  range: 3
-  bulletImpulse: 14
+  FreezeRotation: 0
+  Range: 1
+  BulletImpulse: 11
   projectile: {fileID: 1140701381854852, guid: d395877e93314cc4890b1bd3ef9d28a8, type: 2}
 --- !u!114 &114572678830223058
 MonoBehaviour:
@@ -153,10 +203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e0d39d990b8bf4189d71d876bf2d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRotationSpeed: 40
-  maxRotationSpeed: 80
-  minMovementSpeed: 1
-  maxMovementSpeed: 1.9
 --- !u!198 &198559466154949352
 ParticleSystem:
   m_ObjectHideFlags: 1

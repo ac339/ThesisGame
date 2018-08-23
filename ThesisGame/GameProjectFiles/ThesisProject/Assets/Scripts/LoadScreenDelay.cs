@@ -21,7 +21,7 @@ public class LoadScreenDelay : MonoBehaviour {
     {
 
         
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(8f);
         SceneManager.LoadScene("Seed");
     }
 }
